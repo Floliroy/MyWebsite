@@ -1,0 +1,117 @@
+<div id="main">
+    {{#ifEquals lang "fr"}}
+        <h1>Guide Among Us</h1>
+        <br/>
+
+        <h3>Sommaire</h3>
+        <ul>
+            <li><a href="#beta">Mode béta</a></li>
+            <li><a href="#private">Serveur privé</a></li>
+            <li><a href="#mumble">Chat de proximité (Mumble)</a></li>
+            <li><a href="#crewlink">Chat de proximité (CrewLink)</a></li>
+        </ul>
+        <br/>
+
+        <h3 id="beta">Mode béta</h3>
+        <ol>
+            <li>Ouvrez Steam, allez dans votre bibliotèque et cliquez sur Among Us</li>
+            <li>    
+                Cliquez sur l'engrenage à droite afin d'accéder aux propriétés
+                <img src="./images/amongus/proprietes.png" alt="Propriétés" />
+            </li>
+            <li>Dans le menu de droite cliquez sur Bêtas</li>
+            <li>Puis dans le premier menu déroulant sélectionnez 'public-beta - public-beta'</li>
+            <li>C'est bon ! Vous pouvez fermer la fenêtre des propriétés et un téléchargement se lancera pour récupérer les fichiers de la béta</li>
+        </ol>
+        <br/>
+
+        <h3 id="private">Serveur privé</h3>
+        <ol>
+            <li>
+                Dans un premier temps téléchargez la dernière version du <a href="https://github.com/Impostor/Impostor" target="_blank">Client Impostor</a><br/>
+                Liens : <strong><a href="https://github.com/Impostor/Impostor/releases/download/v1.1.0/Impostor-Client-win-x64.zip">Téléchargement direct</a></strong> 
+                | <strong><a href="https://github.com/Impostor/Impostor/releases/tag/v1.1.0" target="_blank">Toutes les versions</a></strong>
+            </li>
+            <li>
+                Extrayez a l'endroit que vous souhaitez le contenu de l'archive Zip (à l'aide d'un outil tel que <a href="https://www.win-rar.com/start.html?&L=10" target="_blank">WinRar</a>)
+            </li>
+            <li>
+                Lancez l'application Impostor.exe<br/>
+                <img src="./images/amongus/impostor.png" alt="Impostor" />
+            </li>
+            <li>
+                Dans le champ IP Address rentrez l'adresse IP du serveur privé Impostor sur lequel vous souhaitez vous connecter<br/>
+                <i>(Vous pouvez me contacter sur Discord pour avoir accès à mon serveur privé)</i>
+            </li>
+            <li>
+                Sauvegardez l'adresse IP à l'aide du bouton Save, vous pouvez maintenant fermer Impostor.exe
+            </li>
+            <li>
+                Redémarrez votre jeu Among Us, si tout fonctionne bien le serveur dans le coin en bas à droite sera Impostor, et non Europe / North America / Asia
+            </li>
+        </ol>
+        <br/>
+
+        <h3 id="mumble">Chat de proximité (Mumble)</h3>
+        <h2>Installation du winhttp.dll</h2>
+        <ol>
+            <li>Téléchargez le fichier winhttp.dll en cliquant <strong><a href="/winhttp">Ici</a></strong></li>
+            <li>Ouvrez Steam, allez dans votre bibliotèque et cliquez sur Among Us</li>
+            <li>    
+                Cliquez sur l'engrenage à droite afin d'accéder aux propriétés
+                <img src="./images/amongus/proprietes.png" alt="Propriétés" />
+            </li>
+            <li>Dans le menu de droite cliquez sur Fichier Locaux puis sur le bouton Parcourir</li>
+            <li>Copiez le fichier winhttp.dll précédemment téléchargé dans ce dossier</li>
+            <li>C'est bon ! Pour vérifier l'installation ouvrez Among Us, un bouton 'proximity config' devrez apparaître dans le jeu</li>
+        </ol>
+        <h2>Configuration de Mumble</h2>
+        <ol>
+            <li>
+                Dans un premier temps téléchargez le logiciel <a href="https://www.mumble.info/" target="_blank">Mumble</a><br/>
+                Liens : <strong><a href="https://www.mumble.info/downloads/windows-64">Téléchargement direct</a></strong> 
+                | <strong><a href="https://www.mumble.info/downloads/" target="_blank">Toutes les versions</a></strong>
+            </li>
+            <li>
+                Après l'installation de Mumble il faut le configurer en cliquant sur l'engrenage bleu dans le menu<br/>
+                <img src="./images/amongus/mumble_config.png" alt="Mumble Config" />
+            </li>
+            <li>
+                Dans l'onglet Sortie Audio à droite il faut mettre ces presets<br/>
+                <img src="./images/amongus/mumble_audio.png" alt="Mumble Audio" /><br/>
+                Vérifiez bien ces paramètres :
+                <ul>
+                    <li>Cocher la Position Audio</li>
+                    <li>Cocher le Casque Audio si vous en avez un</li>
+                    <li>Distance minimale 1.0m</li>
+                    <li>Augmentation 175%</li>
+                    <li>Distance maximale 4.0m</li>
+                    <li>Volume minimum 0%</li>
+                </ul>
+            </li>
+            <li>
+                Puis allez dans l'onglet Plugins à droite<br/>
+                <img src="./images/amongus/mumble_plugin.png" alt="Mumble Plugin" /><br/>
+                Ici il faut vérifier deux choses :
+                <ul>
+                    <li>Lier au jeu et transmettre la position est coché</li>
+                    <li>Link v1.2.0 est coché</li>
+                </ul>
+            </li>
+            <li>Vous pouvez maintenant cliquez sur Appliquer et Valider</li>
+            <li>
+                Enfin connectez vous au serveur Mumble avec vos camarades de jeu<br/>
+                <i>(Vous pouvez me contacter sur Discord pour avoir accès à mon serveur privé)</i>
+            </li>
+        </ol>
+        <br/>
+
+        <h3 id="crewlink">Chat de proximité (CrewLink)</h3>
+        <h2>TODO</h2>
+        <br/>
+    {{else}}
+        <h1>This page is not available in english for now.</h1>
+        <br/><br/><br/>
+        <h2>Please check it in french by changing the website language in the top right corner.</h2>
+    {{/ifEquals}}
+</div>
