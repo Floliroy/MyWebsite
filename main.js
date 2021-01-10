@@ -26,6 +26,7 @@ app.engine("handlebars", handlebars({
  * Pages
  */
 function getPage(page, req, res){
+    console.log(`${req.headers["x-forwarded-for"] || req.connection.remoteAddress} asked for ${page}`)
     res.render(page, {layout: "index",
         theme: req.cookies["theme"] || "black",
         lang: req.cookies["lang"] || "fr"
