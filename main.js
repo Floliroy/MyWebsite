@@ -66,8 +66,8 @@ app.get("/switchLang", function(req, res){
  * Start server
  */
 app.use(express.static("public"))
-app.listen(80, function(){
-    console.log("Server running on port 80!")
+app.listen(8000, function(){
+    console.log("Server running on port 8000!")
 })
 
 /**
