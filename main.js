@@ -1,8 +1,11 @@
+require('dotenv').config()
+
 /**
  * All the libraries
  */
 const moment = require('moment')
 const express = require('express')
+const https = require('https')
 const cookieParser = require('cookie-parser')
 const handlebars = require('express-handlebars')
 
@@ -66,7 +69,10 @@ app.get("/switchLang", function(req, res){
  * Start server
  */
 app.use(express.static("public"))
-app.listen(8000, function(){
+https.createServer({
+    key: process.env.SERVER_KEY.replace(/\\n/g, '\n'),
+    cert: process.env.SERVER_CERT.replace(/\\n/g, '\n')
+}, app).listen(8000, function(){
     console.log("Server running on port 8000!")
 })
 
