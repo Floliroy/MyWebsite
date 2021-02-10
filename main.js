@@ -49,6 +49,9 @@ app.get("/amongus", function(req, res){
 app.get("/winhttp", function(req, res){
     res.download(__dirname + "/public/ressources/winhttp.dll")
 })
+app.get("/sheriff", function(req, res){
+    res.download(__dirname + "/public/ressources/AmongUs_SheriffMod.zip")
+})
 
 /**
  * Gestion des cookies
