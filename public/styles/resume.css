@@ -1,0 +1,24 @@
+#imgProfil{
+    float: right;
+    width: 10em;
+}
+#imgProfil img{
+    width: 10em;
+    height: 10em;
+    border-radius: 50%;
+}
+
+span.dot{
+    height: 12px;
+    width: 12px;
+    border: 1px solid black;
+    border-radius: 50%;
+    display: inline-block;
+    margin-bottom: -2px;
+}
+span.red{
+    background-color: crimson;
+}
+span.white{
+    background-color: whitesmoke;
+}

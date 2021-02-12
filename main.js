@@ -26,7 +26,10 @@ app.engine("handlebars", handlebars({
  * Pages
  */
 function getPage(page, req, res){
-    console.log(`${req.headers["x-forwarded-for"] || req.connection.remoteAddress} asked for ${page}`)
+    if(page != "error"){
+        console.log(`${req.headers["x-forwarded-for"] || req.connection.remoteAddress} asked for ${page}`)
+    }
+
     res.render(page, {layout: "index",
         theme: req.cookies["theme"] || "black",
         lang: req.cookies["lang"] || "fr"
@@ -41,6 +44,9 @@ app.get("/resume", function(req, res){
 })
 app.get("/amongus", function(req, res){
     getPage("amongus", req, res)
+})
+app.get("/error", function(req, res){
+    getPage("error", req, res)
 })
 
 /**
@@ -69,6 +75,10 @@ app.get("/switchLang", function(req, res){
  * Start server
  */
 app.use(express.static("public"))
+app.use(function (req, res){
+	res.status(404)
+    res.redirect("error")
+})
 app.listen(8000, function(){
     console.log("Server running on port 8000!")
 })

@@ -1,33 +1,31 @@
-<div id="main">
-    <h1>
-        {{#ifEquals lang "fr"}}Bienvenue sur mon propre Site Web{{else}}Welcome on my very own WebSite{{/ifEquals}}
-    </h1>
-    <br/>
-    <h2>
-        {{#ifEquals lang "fr"}}Voici la liste des pages disponibles{{else}}Here is the list of available pages{{/ifEquals}} :
-    </h2>
-    <br/>
+<h1>
+    {{#ifEquals lang "fr"}}Bienvenue sur mon propre Site Web{{else}}Welcome on my very own WebSite{{/ifEquals}}
+</h1>
+<br/>
+<h2>
+    {{#ifEquals lang "fr"}}Voici la liste des pages disponibles{{else}}Here is the list of available pages{{/ifEquals}} :
+</h2>
+<br/>
 
-    <a href="/resume"><div>
-        <h3>Portfolio</h3>
-        {{#ifEquals lang "fr"}}
-            Mon propre Portfolio / Curriculum Vitae <i>(en cours de dev ...)</i>
-        {{else}}
-            My own Portfolio / Curriculum Vitae <i>(in development ...)</i>
-        {{/ifEquals}}
-    </div></a>
-    <br/>
+<a href="/resume"><div>
+    <h3>Portfolio</h3>
+    {{#ifEquals lang "fr"}}
+        Mon propre Portfolio / Curriculum Vitae <i>(en cours de dev ...)</i>
+    {{else}}
+        My own Portfolio / Curriculum Vitae <i>(in development ...)</i>
+    {{/ifEquals}}
+</div></a>
+<br/>
 
-    <a href="/amongus"><div>
-        <h3>Among Us</h3>
-        {{#ifEquals lang "fr"}}
-            Plusieurs guides sur Among Us :<br/><br/>
-            Installation de la version béta<br/>
-            Connexion à un serveur privé<br/>
-            Installation du chat de proximité (version Mumble)<br/>
-        {{else}}
-            Different guides related to Among Us <i>(only available in french for now)</i>
-        {{/ifEquals}}
-    </div></a>
-    <br/>
-</div>
+<a href="/amongus"><div>
+    <h3>Among Us</h3>
+    {{#ifEquals lang "fr"}}
+        Plusieurs guides sur Among Us :<br/><br/>
+        Installation de la version béta<br/>
+        Connexion à un serveur privé<br/>
+        Installation du chat de proximité (version Mumble)<br/>
+    {{else}}
+        Different guides related to Among Us <i>(only available in french for now)</i>
+    {{/ifEquals}}
+</div></a>
+<br/>

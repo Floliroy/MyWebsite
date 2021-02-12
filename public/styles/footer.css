@@ -1,0 +1,22 @@
+.blackTheme footer{
+    background-color: #2f3136;
+}
+.whiteTheme footer{
+    background-color: whitesmoke;
+}
+
+footer{
+    border-top: 2px solid slategrey;
+    position: fixed;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    padding: 1.5em 0 1em 0;
+    text-align: center;
+}
+
+footer img{
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+}

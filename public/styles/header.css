@@ -1,0 +1,28 @@
+header{
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    padding: 1.5em 0 1.5em 0;
+    border-bottom: 2px solid slategrey;
+}
+.blackTheme header{
+    background-color: #2f3136;
+}
+.whiteTheme header{
+    background-color: whitesmoke;
+}
+
+header span img{
+    width: 40px;
+    height: 25px;
+    filter: grayscale(1);
+}
+header .selected{
+    filter: grayscale(0);
+}
+header #theme{
+    width: 25px;
+    height: 25px;
+    filter: grayscale(0);
+}
