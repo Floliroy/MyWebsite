@@ -7,6 +7,7 @@ const cookieParser = require('cookie-parser')
 const handlebars = require('express-handlebars')
 
 const AmongUs = require('./modules/amongus')
+const Resume = require('./modules/resume')
 
 /**
  * Setup the handlebars lib
@@ -42,7 +43,7 @@ app.get("/", function(req, res){
     getPage("index", req, res)
 })
 app.get("/resume", function(req, res){
-    getPage("resume", req, res)
+    Resume.getPage(req, res)
 })
 app.get("/amongus", function(req, res){
     AmongUs.getPage(req, res)

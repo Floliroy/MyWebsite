@@ -38,6 +38,7 @@ const links = {
 module.exports = class AmongUs{
 
     static getPage(req, res){
+        console.log(`${req.headers["x-forwarded-for"] || req.connection.remoteAddress} asked for amongus`)
         res.render("amongus", {layout: "layout",
             links: links,
             theme: req.cookies["theme"] || "black",

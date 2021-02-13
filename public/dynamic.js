@@ -12,18 +12,6 @@ function switchTheme(){
     })
 }
 
-$(document).ready(function(){
-    for(let div of document.getElementsByTagName("div")){
-        if(!div.id.startsWith("more-")){
-            div.onclick = function(){
-                $(`#more-${div.id}`).toggle()
-            }
-        }else{
-            $(`#${div.id}`).hide()
-        }
-    }
-})
-
 function offsetAnchor() {
     if (location.hash.length !== 0) {
         window.scrollTo(window.scrollX, window.scrollY - 100);

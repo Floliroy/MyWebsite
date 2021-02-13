@@ -1,328 +1,191 @@
 <link rel="stylesheet" type="text/css" href="./styles/resume.css" />
 <table>
-    <thead>
-        <tr>
-            <th>
-                <table>
-                    <tr>
-                        <th width="80%">
-                            <h1>Florian TERRIER</h1>
-                            {{#ifEquals lang "fr"}}
-                                <p>22 ans, né à Toulouse (France)</p>
-                            {{else}}
-                                <p>22 years old, born at Toulouse (France)</p>
-                            {{/ifEquals}}
-                            <p><a href="tel:+33619422408">&#x260E; 06 19 42 24 08</a></p>
-                            <p><a href="mailto:florian.leeroy@hotmai.com">&#x2709; florian.leeroy@hotmail.com</a></p>
-                        </th>
-                        <th id="imgProfil">
-                            <img src="./images/profil.png" alt="Profil" />
-                        </th>
-                    </tr>
-                </table>
-            </th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr><td><table><tr>
-            <td width="62%">
-                <div id="diplomas">
-                    {{#ifEquals lang "fr"}}
-                    <h3>DIPLOMES</h3>
-                    <ul>
-                        <li>
-                            <p>
-                                L3 STRI, UPSSITECH - Université Paul Sabatier<br/>
-                                Aout 2020 - Toulouse (31)
-                            </p>
-                        </li>
-                        <li>
-                            <p>
-                                DUT GEII, Université Paul Sabatier<br/>
-                                Janvier 2019 - Toulouse (31)
-                            </p>
-                        </li>
-                        <li>
-                            <p>
-                                Bac S SI, Spé Math - Lycée Pierre Paul Riquet<br/>
-                                Juillet 2016 - Saint-Orens (31)
-                            </p>
-                        </li>
-                    </ul>
-                    {{else}}
-                    <h3>DIPLOMAS</h3>
-                    <ul>
-                        <li>
-                            <p>
-                                L3 STRI, UPSSITECH - University Paul Sabatier<br/>
-                                August 2020 - Toulouse (31)
-                            </p>
-                        </li>
-                        <li>
-                            <p>
-                                DUT GEII, University Paul Sabatier<br/>
-                                January 2019 - Toulouse (31)
-                            </p>
-                        </li>
-                        <li>
-                            <p>
-                                Bac S SI, Spec Math - High School Pierre Paul Riquet<br/>
-                                July 2016 - Saint-Orens (31)
-                            </p>
-                        </li>
-                    </ul>
-                    {{/ifEquals}}
-                </div><br/>
-                <div id="experiences">
-                    {{#ifEquals lang "fr"}}
-                    <h3>EXPERIENCES PROFESSIONNELLES</h3>
-                    <ul>
-                        <li>
-                            <p>
-                                Vacataire puis Alternant Développeur Web, MESRI<br/>
-                                Février 2019 à Aujourd'hui
-                            </p>
-                        </li>
-                        <li>
-                            <p>
-                                Vacataire Chaîne d'Inscription, Université Paul Sabatier<br/>
-                                Été 2017 et Été 2018
-                            </p>
-                        </li>
-                        <li>
-                            <p>
-                                Stage de 2ème année GEII, LAAS-CNRS<br/>
-                                Avril à Juin 2018
-                            </p>
-                        </li>
-                    </ul>
-                    {{else}}
-                    <h3>PROFESSIONAL EXPERIENCES</h3>
-                    <ul>
-                        <li>
-                            <p>
-                                Temporary worker then Work-study Web Developer, MESRI<br/>
-                                February 2019 to Today
-                            </p>
-                        </li>
-                        <li>
-                            <p>
-                                Temporary worker Registration Chain, University Paul Sabatier<br/>
-                                Summer 2017 and Summer 2018
-                            </p>
-                        </li>
-                        <li>
-                            <p>
-                                2nd year GEII Internship, LAAS-CNRS<br/>
-                                April to June 2018
-                            </p>
-                        </li>
-                    </ul>
-                    {{/ifEquals}}
-                </div><br/>
-                <div id="projects">
-                    {{#ifEquals lang "fr"}}
-                    <h3>PROJETS</h3>
-                    TODO
-                    {{else}}
-                    <h3>PROJECTS</h3>
-                    TODO
-                    {{/ifEquals}}
-                </div><br/>
-            </td>
-            <td>
-                <div id="skills">
-                    <h3>{{#ifEquals lang "fr"}}COMPETENCES{{else}}SKILLS{{/ifEquals}}</h3>
+    <tr>
+        <th width="80%">
+            <h1>Florian TERRIER</h1>
+            {{#ifEquals lang "fr"}}
+                <p>{{{getAge}}} ans, né à Toulouse (France)</p>
+            {{else}}
+                <p>{{{getAge}}} years old, born at Toulouse (France)</p>
+            {{/ifEquals}}
+            <p><a href="tel:+33619422408">&#x260E; 06 19 42 24 08</a></p>
+            <p><a href="mailto:florian.leeroy@hotmai.com">&#x2709; florian.leeroy@hotmail.com</a></p>
+        </th>
+        <th id="imgProfil">
+            <img src="./images/profil.png" alt="Profil" />
+        </th>
+    </tr>
+</table>
+<table>
+    <tr>
+        <td width="62%">
+            <div id="diplomas">
+                {{#ifEquals lang "fr"}}
+                <h3>DIPLOMES</h3>
+                <ul>
+                    <li>
+                        <p>
+                            L3 STRI, UPSSITECH - Université Paul Sabatier<br/>
+                            Aout 2020 - Toulouse (31)
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            DUT GEII, Université Paul Sabatier<br/>
+                            Janvier 2019 - Toulouse (31)
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Bac S SI, Spé Math - Lycée Pierre Paul Riquet<br/>
+                            Juillet 2016 - Saint-Orens (31)
+                        </p>
+                    </li>
+                </ul>
+                {{else}}
+                <h3>DIPLOMAS</h3>
+                <ul>
+                    <li>
+                        <p>
+                            L3 STRI, UPSSITECH - University Paul Sabatier<br/>
+                            August 2020 - Toulouse (31)
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            DUT GEII, University Paul Sabatier<br/>
+                            January 2019 - Toulouse (31)
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Bac S SI, Spec Math - High School Pierre Paul Riquet<br/>
+                            July 2016 - Saint-Orens (31)
+                        </p>
+                    </li>
+                </ul>
+                {{/ifEquals}}
+            </div><br/>
+            <div id="experiences">
+                {{#ifEquals lang "fr"}}
+                <h3>EXPERIENCES PROFESSIONNELLES</h3>
+                <ul>
+                    <li>
+                        <p>
+                            Vacataire puis Alternant Développeur Web, MESRI<br/>
+                            Février 2019 à Aujourd'hui
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Vacataire Chaîne d'Inscription, Université Paul Sabatier<br/>
+                            Été 2017 et Été 2018
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Stage de 2ème année GEII, LAAS-CNRS<br/>
+                            Avril à Juin 2018
+                        </p>
+                    </li>
+                </ul>
+                {{else}}
+                <h3>PROFESSIONAL EXPERIENCES</h3>
+                <ul>
+                    <li>
+                        <p>
+                            Temporary worker then Work-study Web Developer, MESRI<br/>
+                            February 2019 to Today
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Temporary worker Registration Chain, University Paul Sabatier<br/>
+                            Summer 2017 and Summer 2018
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            2nd year GEII Internship, LAAS-CNRS<br/>
+                            April to June 2018
+                        </p>
+                    </li>
+                </ul>
+                {{/ifEquals}}
+            </div><br/>
+            <div id="projects">
+                {{#ifEquals lang "fr"}}
+                <h3>PROJETS</h3>
+                TODO
+                {{else}}
+                <h3>PROJECTS</h3>
+                TODO
+                {{/ifEquals}}
+            </div><br/>
+        </td>
+        <td>
+            <div id="skills">
+                <h3>{{#ifEquals lang "fr"}}COMPETENCES{{else}}SKILLS{{/ifEquals}}</h3>
+                {{#each skills}}
                     <p>
-                        {{#ifEquals lang "fr"}}Informatique (Logiciel){{else}}Cumputer Science{{/ifEquals}}
-                        <span class="right">
-                            <span class="dot red"></span>
-                            <span class="dot red"></span>
-                            <span class="dot red"></span>
-                            <span class="dot red"></span>
-                            <span class="dot red"></span>
-                        </span>
+                        {{#ifEquals ../lang "fr"}}
+                            {{fr}}
+                        {{else}}
+                            {{en}}
+                        {{/ifEquals}}
+                        {{{printLevel level}}}
                     </p>
+                {{/each}}
+            </div><br/>
+            <div id="softwares">
+                <h3>{{#ifEquals lang "fr"}}LOGICIELS{{else}}SOFTWARES{{/ifEquals}}</h3>
+                {{#each softwares}}
                     <p>
-                        {{#ifEquals lang "fr"}}Informatique (Données){{else}}Data Processing{{/ifEquals}}
-                        <span class="right">
-                            <span class="dot red"></span>
-                            <span class="dot red"></span>
-                            <span class="dot red"></span>
-                            <span class="dot red"></span>
-                            <span class="dot white"></span>
-                        </span>
+                        {{name}}
+                        {{{printLevel level}}}
                     </p>
+                {{/each}}
+            </div><br/>
+            <div id="technologies">
+            <h3>TECHNOLOGIES</h3>
+                {{#each technologies}}
                     <p>
-                        {{#ifEquals lang "fr"}}Électronique{{else}}Electronic{{/ifEquals}}
-                        <span class="right">
-                            <span class="dot red"></span>
-                            <span class="dot red"></span>
-                            <span class="dot red"></span>
-                            <span class="dot white"></span>
-                            <span class="dot white"></span>
-                        </span>
+                        {{name}}
+                        {{{printLevel level}}}
                     </p>
-                    <p>
-                        {{#ifEquals lang "fr"}}Réseaux et Télécoms{{else}}Networks and Telecoms{{/ifEquals}}
-                        <span class="right">
-                            <span class="dot red"></span>
-                            <span class="dot red"></span>
-                            <span class="dot white"></span>
-                            <span class="dot white"></span>
-                            <span class="dot white"></span>
-                        </span>
-                    </p>
-                    <p>
-                        {{#ifEquals lang "fr"}}Anglais{{else}}English{{/ifEquals}}
-                        <span class="right">
-                            <span class="dot red"></span>
-                            <span class="dot red"></span>
-                            <span class="dot red"></span>
-                            <span class="dot red"></span>
-                            <span class="dot white"></span>
-                        </span>
-                    </p>
-                </div><br/>
-                <div id="softwares">
-                    <h3>{{#ifEquals lang "fr"}}LOGICIELS{{else}}SOFTWARES{{/ifEquals}}</h3>
-                    <p>
-                        VisualStudio Code
-                        <span class="right">
-                            <span class="dot red"></span>
-                            <span class="dot red"></span>
-                            <span class="dot red"></span>
-                            <span class="dot red"></span>
-                            <span class="dot red"></span>
-                        </span>
-                    </p>
-                    <p>
-                        Eclipse
-                        <span class="right">
-                            <span class="dot red"></span>
-                            <span class="dot red"></span>
-                            <span class="dot red"></span>
-                            <span class="dot red"></span>
-                            <span class="dot red"></span>
-                        </span>
-                    </p>
-                    <p>
-                        Oracle
-                        <span class="right">
-                            <span class="dot red"></span>
-                            <span class="dot red"></span>
-                            <span class="dot red"></span>
-                            <span class="dot red"></span>
-                            <span class="dot white"></span>
-                        </span>
-                    </p>
-                    <br/>
-                    <p>
-                        Arduino
-                        <span class="right">
-                            <span class="dot red"></span>
-                            <span class="dot red"></span>
-                            <span class="dot white"></span>
-                            <span class="dot white"></span>
-                            <span class="dot white"></span>
-                        </span>
-                    </p>
-                    <p>
-                        Looping
-                        <span class="right">
-                            <span class="dot red"></span>
-                            <span class="dot red"></span>
-                            <span class="dot red"></span>
-                            <span class="dot white"></span>
-                            <span class="dot white"></span>
-                        </span>
-                    </p> 
-                </div><br/>
-                <div id="technologies">
-                <h3>TECHNOLOGIES</h3>
-                    <p>
-                        Git
-                        <span class="right">
-                            <span class="dot red"></span>
-                            <span class="dot red"></span>
-                            <span class="dot red"></span>
-                            <span class="dot red"></span>
-                            <span class="dot white"></span>
-                        </span>
-                    </p>
-                    <p>
-                        PL/SQL
-                        <span class="right">
-                            <span class="dot red"></span>
-                            <span class="dot red"></span>
-                            <span class="dot red"></span>
-                            <span class="dot red"></span>
-                            <span class="dot white"></span>
-                        </span>
-                    </p>
-                    <p>
-                        Spring
-                        <span class="right">
-                            <span class="dot red"></span>
-                            <span class="dot red"></span>
-                            <span class="dot white"></span>
-                            <span class="dot white"></span>
-                            <span class="dot white"></span>
-                        </span>
-                    </p>
-                    <p>
-                        NodeJS
-                        <span class="right">
-                            <span class="dot red"></span>
-                            <span class="dot red"></span>
-                            <span class="dot red"></span>
-                            <span class="dot red"></span>
-                            <span class="dot red"></span>
-                        </span>
-                    </p>
-                    <p>
-                        WSL
-                        <span class="right">
-                            <span class="dot red"></span>
-                            <span class="dot red"></span>
-                            <span class="dot red"></span>
-                            <span class="dot white"></span>
-                            <span class="dot white"></span>
-                        </span>
-                    </p>
-                </div><br/>
-                <div id="hobbies">
-                    {{#ifEquals lang "fr"}}
-                    <h3>CENTRES D'INTERET</h3>
-                    <p>
-                        Jeux Vidéos
-                    </p>
-                    <p>
-                        Séries TV
-                    </p>
-                    <p>
-                        Taekwondo
-                    </p>         
-                    <p>
-                        Culture du web
-                    </p>       
-                    {{else}}
-                    <h3>HOBBIES</h3>
-                    <p>
-                        Video Games
-                    </p>
-                    <p>
-                        TV Series
-                    </p>
-                    <p>
-                        Taekwondo
-                    </p>         
-                    <p>
-                        Web culture
-                    </p>      
-                    {{/ifEquals}}
-                </div><br/>
-            </td>
-        </tr></table></td></tr>
-    </tbody>
+                {{/each}}
+            </div><br/>
+            <div id="hobbies">
+                {{#ifEquals lang "fr"}}
+                <h3>CENTRES D'INTERET</h3>
+                <p>
+                    Jeux Vidéos
+                </p>
+                <p>
+                    Séries TV
+                </p>
+                <p>
+                    Taekwondo
+                </p>         
+                <p>
+                    Culture du web
+                </p>       
+                {{else}}
+                <h3>HOBBIES</h3>
+                <p>
+                    Video Games
+                </p>
+                <p>
+                    TV Series
+                </p>
+                <p>
+                    Taekwondo
+                </p>         
+                <p>
+                    Web culture
+                </p>      
+                {{/ifEquals}}
+            </div><br/>
+        </td>
+    </tr>
 </table>

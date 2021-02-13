@@ -1,3 +1,7 @@
+html{
+    min-width: 600px;
+}
+
 #imgProfil{
     float: right;
     width: 10em;
@@ -21,4 +25,9 @@ span.red{
 }
 span.white{
     background-color: whitesmoke;
+}
+
+table{
+    width: calc(100% + 20px);
+    margin-left: -10px;
 }
