@@ -13,73 +13,37 @@
     <br/>
 
     <h3 id="links">Liens rapides</h3>
+   
     <table class="bordered">
         <thead>
             <tr>
+                {{#each links}}
                 <th>
-                    Impostor<br/>
-                    <i>(Serveur Privé)</i>
+                    {{name}}
                 </th>
-                <th>
-                    Mumble<br/>
-                    <i>(winhttp.dll)</i>
-                </th>
-                <th>
-                    Mumble<br/>
-                    <i>(Logiciel)</i>
-                </th>
-                <th>
-                    Better CrewLink<br/>
-                    <i>(Logiciel)</i>
-                </th>
-                <th>
-                    Sheriff<br/>
-                    <i>(Plugin)</i>
-                </th>
+                {{/each}}
             </tr>
         </thead>
         <tbody>
             <tr>
+                {{#each links}}
                 <td>
                     Direct :<br>
-                    <strong><a href="https://github.com/Impostor/Impostor/releases/download/v1.1.0/Impostor-Client-win-x64.zip">Télécharger</a></strong> 
+                    <strong><a href="{{direct}}">Télécharger</a></strong>
                 </td>
-                <td>
-                    Direct :<br>
-                    <strong><a href="/winhttp">Télécharger</a></strong> 
-                </td>
-                <td>
-                    Direct :<br>
-                    <strong><a href="https://www.mumble.info/downloads/windows-64">Télécharger</a></strong> 
-                </td>
-                <td>
-                    Direct :<br>
-                    <strong><a href="https://github.com/OhMyGuus/BetterCrewLink/releases/download/v2.2.3/Better-CrewLink-Setup-2.2.3.exe">Télécharger</a></strong> 
-                </td>
-                <td>
-                    Direct :<br>
-                    <strong><a href="/sheriff">Télécharger</a></strong> 
-                </td>
+                {{/each}}
             </tr>
             <tr>
+                {{#each links}}
                 <td>
-                    Versions :<br>
-                    <strong><a href="https://github.com/Impostor/Impostor/releases/tag/v1.1.0" target="_blank">GitHub</a></strong>
+                    {{#if versions}}
+                        Versions :<br>
+                        <strong><a href="{{versions.link}}" target="_blank">{{versions.name}}</a></strong>
+                    {{else}}
+                        <strong>/</strong>
+                    {{/if}}
                 </td>
-                <td>
-                    <strong>/</strong>
-                </td>
-                <td>
-                    Versions :<br>
-                    <strong><a href="https://www.mumble.info/downloads/" target="_blank">Mumble</a></strong>
-                </td>
-                <td>
-                    Versions :<br>
-                    <strong><a href="https://github.com/OhMyGuus/BetterCrewLink/releases" target="_blank">GitHub</a></strong>
-                </td>
-                <td>
-                    <strong>/</strong>
-                </td>
+                {{/each}}
             </tr>
         </tbody>
     </table>
@@ -101,9 +65,9 @@
     <h3 id="private">Serveur privé</h3>
     <ol>
         <li>
-            Dans un premier temps téléchargez la dernière version du <a href="https://github.com/Impostor/Impostor" target="_blank">Client Impostor</a><br/>
-            Liens : <strong><a href="https://github.com/Impostor/Impostor/releases/download/v1.1.0/Impostor-Client-win-x64.zip">Téléchargement direct</a></strong> 
-            | <strong><a href="https://github.com/Impostor/Impostor/releases/tag/v1.1.0" target="_blank">Toutes les versions</a></strong>
+            Dans un premier temps téléchargez la dernière version du Client Impostor<br/>
+            Liens : <strong><a href="{{links.impostor.direct}}">Téléchargement direct</a></strong> 
+            | <strong><a href="{{links.impostor.versions.link}}" target="_blank">Toutes les versions</a></strong>
         </li>
         <li>
             Extrayez a l'endroit que vous souhaitez le contenu de l'archive Zip (à l'aide d'un outil tel que <a href="https://www.win-rar.com/start.html?&L=10" target="_blank">WinRar</a>)
@@ -129,7 +93,7 @@
     <h3 id="mumble">Chat de proximité (Mumble)</h3>
     <h2>Installation du winhttp.dll</h2>
     <ol>
-        <li>Téléchargez le fichier winhttp.dll en cliquant <strong><a href="/winhttp">Ici</a></strong></li>
+        <li>Téléchargez le fichier winhttp.dll en cliquant <strong><a href="{{links.mumbleWin.direct}}">Ici</a></strong></li>
         <li>Ouvrez Steam, allez dans votre bibliotèque et cliquez sur Among Us</li>
         <li>    
             Cliquez sur l'engrenage à droite afin d'accéder aux propriétés<br/>
@@ -142,9 +106,9 @@
     <h2>Configuration de Mumble</h2>
     <ol>
         <li>
-            Dans un premier temps téléchargez le logiciel <a href="https://www.mumble.info/" target="_blank">Mumble</a><br/>
-            Liens : <strong><a href="https://www.mumble.info/downloads/windows-64">Téléchargement direct</a></strong> 
-            | <strong><a href="https://www.mumble.info/downloads/" target="_blank">Toutes les versions</a></strong>
+            Dans un premier temps téléchargez le logiciel Mumble<br/>
+            Liens : <strong><a href="{{links.mumbleLog.direct}}">Téléchargement direct</a></strong> 
+            | <strong><a href="{{links.mumbleLog.versions.link}}" target="_blank">Toutes les versions</a></strong>
         </li>
         <li>
             Après l'installation de Mumble il faut le configurer en cliquant sur l'engrenage bleu dans le menu<br/>

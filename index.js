@@ -6,6 +6,8 @@ const express = require('express')
 const cookieParser = require('cookie-parser')
 const handlebars = require('express-handlebars')
 
+const AmongUs = require('./modules/amongus')
+
 /**
  * Setup the handlebars lib
  */
@@ -13,7 +15,7 @@ const app = express()
 app.use(cookieParser())
 app.set("view engine", "handlebars")
 app.engine("handlebars", handlebars({
-    layoutsDir: __dirname + "/views/layouts",
+    layoutsDir: __dirname + "/views/layouts/",
     partialsDir: __dirname + "/views/partials/",
     helpers: {
         ifEquals: function(val1, val2, options){
@@ -30,20 +32,20 @@ function getPage(page, req, res){
         console.log(`${req.headers["x-forwarded-for"] || req.connection.remoteAddress} asked for ${page}`)
     }
 
-    res.render(page, {layout: "index",
+    res.render(page, {layout: "layout",
         theme: req.cookies["theme"] || "black",
         lang: req.cookies["lang"] || "fr"
     })
 }
 
 app.get("/", function(req, res){
-    getPage("main", req, res)
+    getPage("index", req, res)
 })
 app.get("/resume", function(req, res){
     getPage("resume", req, res)
 })
 app.get("/amongus", function(req, res){
-    getPage("amongus", req, res)
+    AmongUs.getPage(req, res)
 })
 app.get("/error", function(req, res){
     getPage("error", req, res)
