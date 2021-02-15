@@ -61,7 +61,12 @@ app.get("/winhttp", function(req, res){
 app.get("/sheriff", function(req, res){
     res.download(__dirname + "/public/ressources/AmongUs_SheriffMod.zip")
 })
-
+/**
+ * For https
+ */
+app.get("/.well-known/acme-challenge/t00YZa5Dzvgq20zsQd1xLOj6nT9iNzbyNexe6LmEEK8", function(req, res){
+    res.download(__dirname + "/.well-known/acme-challenge/t00YZa5Dzvgq20zsQd1xLOj6nT9iNzbyNexe6LmEEK8")
+})
 /**
  * Gestion des cookies
  */
