@@ -2,12 +2,29 @@
  * All the libraries
  */
 const moment = require('moment')
+const http = require('http')
+const https = require('https')
 const express = require('express')
 const cookieParser = require('cookie-parser')
 const handlebars = require('express-handlebars')
 
+/**
+ * My own libraries
+ */
 const AmongUs = require('./modules/amongus')
 const Resume = require('./modules/resume')
+
+/**
+ * Certificate https
+ */
+const privateKey = fs.readFileSync('/etc/letsencrypt/live/www.floliroy.fr/privkey.pem', 'utf8')
+const certificate = fs.readFileSync('/etc/letsencrypt/live/yourdomain.com/cert.pem', 'utf8')
+const ca = fs.readFileSync('/etc/letsencrypt/live/yourdomain.com/chain.pem', 'utf8')
+const credentials = {
+	key: privateKey,
+	cert: certificate,
+	ca: ca
+}
 
 /**
  * Setup the handlebars lib
@@ -87,8 +104,13 @@ app.use(function (req, res){
 	res.status(404)
     res.redirect("error")
 })
-app.listen(8000, function(){
-    console.log("Server running on port 8000!")
+const httpServer = http.createServer(app)
+httpServer.listen(8080, function(){
+    console.log("Server running on port 8080!")
+})
+const httpsServer = https.createServer(credentials, app)
+httpsServer.listen(8443, function(){
+    console.log("Server running on port 8443!")
 })
 
 /**
