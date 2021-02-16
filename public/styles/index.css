@@ -16,6 +16,7 @@ body.whiteTheme{
 /** Main */
 div#main{
     width: 80%;
+    max-width: 1152px;
     border: 2px solid slategrey;
     margin-left: auto;
     margin-right: auto;
@@ -50,6 +51,28 @@ h3{
     border-left: 4px solid crimson;
     padding: 0.3em 0.5em 0.3em 0.5em;
     margin: 0.5em 0 0.5em 0;
+    position: relative;
+    transition: border-left 0.5s ease-in-out;
+}
+
+h3::after{
+    content: ' ';
+    left: -0.2em;
+    bottom: 0;
+    height: 0;
+    width: 4px;
+    position: absolute;
+    transition: height 0.3s;
+}
+.blackTheme h3::after{
+    background: whitesmoke;
+}
+.whiteTheme h3::after{
+    background: #2f3136;
+}
+h3:hover::after{
+    height: 100%;
+    transition: height 0.3s;
 }
 
 a{
