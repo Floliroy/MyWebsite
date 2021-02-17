@@ -1,6 +1,6 @@
 const links = {
     impostor: {
-        name: "Impostor\n(Serveur Privé)",
+        name: "Impostor (Serveur Privé)<br/><i>au.floliroy.fr</i>",
         direct: "https://github.com/Impostor/Impostor/releases/download/v1.1.0/Impostor-Client-win-x64.zip",
         versions: {
             name: "GitHub",
@@ -8,12 +8,12 @@ const links = {
         }
     },
     mumbleWin: {
-        name: "Mumble\n(winhttp.dll)",
+        name: "Mumble (winhttp.dll)",
         direct: "/winhttp",
         versions: null
     },
     mumbleLog: {
-        name: "Mumble\n(Logiciel)",
+        name: "Mumble (Logiciel)<br/><i>mbl.floliroy.fr</i>",
         direct: "https://www.mumble.info/downloads/windows-64",
         versions: {
             name: "Mumble",
@@ -21,7 +21,7 @@ const links = {
         }
     },
     betterCrewLink: {
-        name: "BetterCrewLink\n(Logiciel)",
+        name: "BetterCrewLink (Logiciel)<br/><i>bcl.floliroy.fr</i>",
         direct: "https://github.com/OhMyGuus/BetterCrewLink/releases/download/v2.2.3/Better-CrewLink-Setup-2.2.3.exe",
         versions: {
             name: "GitHub",
@@ -29,7 +29,7 @@ const links = {
         }
     },
     sheriff: {
-        name: "Sheriff\n(Plugin)",
+        name: "Sheriff (Plugin)",
         direct: "/sheriff",
         versions: null
     }
