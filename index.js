@@ -38,6 +38,7 @@ app.engine("handlebars", handlebars({
     partialsDir: __dirname + "/views/partials/",
     version: require("./package.json").version,
     helpers: {
+        version: require("./package.json").version,
         ifEquals: function(val1, val2, options){
             return val1 == val2 ? options.fn(this) : options.inverse(this)
         }
