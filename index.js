@@ -100,8 +100,8 @@ app.get("/switchLang", function(req, res){
 /**
  * Start server
  */
-http.get('*', function(req, res) { 
-    res.redirect('https://' + req.headers.host + req.url);
+http.get("*", function(req, res) { 
+    res.redirect("https://www.floliroy.fr" + req.url);
 })
 app.use(express.static("public"))
 app.use(function (req, res){
