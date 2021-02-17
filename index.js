@@ -36,6 +36,7 @@ app.set("view engine", "handlebars")
 app.engine("handlebars", handlebars({
     layoutsDir: __dirname + "/views/layouts/",
     partialsDir: __dirname + "/views/partials/",
+    version: require("./package.json").version,
     helpers: {
         ifEquals: function(val1, val2, options){
             return val1 == val2 ? options.fn(this) : options.inverse(this)
