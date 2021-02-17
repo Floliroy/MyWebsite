@@ -100,15 +100,15 @@ app.get("/switchLang", function(req, res){
 /**
  * Start server
  */
-http.get("*", function(req, res) { 
-    res.redirect("https://www.floliroy.fr" + req.url);
-})
 app.use(express.static("public"))
 app.use(function (req, res){
 	res.status(404)
     res.redirect("error")
 })
 const httpServer = http.createServer(app)
+httpServer.get("*", function(req, res) { 
+    res.redirect('https://' + req.headers.host + req.url);
+})
 httpServer.listen(8080, function(){
     console.log("Server running on port 8080!")
 })
