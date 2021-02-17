@@ -1,3 +1,4 @@
+require('dotenv').config()
 /**
  * All the libraries
  */
@@ -7,6 +8,7 @@ const http = require('http')
 const https = require('https')
 const express = require('express')
 const cookieParser = require('cookie-parser')
+const Handlebars = require('handlebars')
 const handlebars = require('express-handlebars')
 
 /**
@@ -18,20 +20,21 @@ const Resume = require('./modules/resume')
 /**
  * Certificate https
  */
-const privateKey = fs.readFileSync('/etc/letsencrypt/live/www.floliroy.fr/privkey.pem', 'utf8')
+/*const privateKey = fs.readFileSync('/etc/letsencrypt/live/www.floliroy.fr/privkey.pem', 'utf8')
 const certificate = fs.readFileSync('/etc/letsencrypt/live/www.floliroy.fr/cert.pem', 'utf8')
 const ca = fs.readFileSync('/etc/letsencrypt/live/www.floliroy.fr/chain.pem', 'utf8')
 const credentials = {
 	key: privateKey,
 	cert: certificate,
 	ca: ca
-}
+}*/
 
 /**
  * Setup the handlebars lib
  */
 const app = express()
 app.use(cookieParser())
+app.use(express.urlencoded({extended: true}))
 app.set("view engine", "handlebars")
 app.engine("handlebars", handlebars({
     layoutsDir: __dirname + "/views/layouts/",
@@ -41,6 +44,11 @@ app.engine("handlebars", handlebars({
         version: require("./package.json").version,
         ifEquals: function(val1, val2, options){
             return val1 == val2 ? options.fn(this) : options.inverse(this)
+        },
+        safePrint: function(text) {
+            text = Handlebars.Utils.escapeExpression(text);
+            text = text.replace(/(\r\n|\n|\r)/gm, '<br/>');
+            return new Handlebars.SafeString(text);
         }
     }
 }))
@@ -70,6 +78,32 @@ app.get("/amongus", function(req, res){
 })
 app.get("/error", function(req, res){
     getPage("error", req, res)
+})
+
+/**
+ * Server ask
+ */
+function checkPassword(req, res){
+    if(req.body.password == process.env.PASSWORD){
+        return true
+    }
+    res.send("Mauvais mot de passe")
+    return false
+}
+app.post("/impostor", function(req, res){
+    if(checkPassword(req, res)){
+        res.send(`Serveur : ${process.env.IMPOSTOR_SERVER}`)
+    }
+})
+app.post("/mumble", function(req, res){
+    if(checkPassword(req, res)){
+        res.send(`Serveur : ${process.env.MUMBLE_SERVER}\nMot de passe : ${process.env.PASSWORD}`)
+    }
+})
+app.post("/bettercrewlink", function(req, res){
+    if(checkPassword(req, res)){
+        res.send(`Serveur : ${process.env.BCL_SERVER}`)
+    }
 })
 
 /**
@@ -107,15 +141,15 @@ app.use(function (req, res){
 	res.status(404)
     res.redirect("error")
 })
-const httpServer = express()
-httpServer.get("*", function(req, res) { 
+const httpServer = http.createServer(app)
+/*httpServer.get("*", function(req, res) { 
     res.redirect("https://" + req.headers.host + req.url)
-})
+})*/
 httpServer.listen(8080)
-const httpsServer = https.createServer(credentials, app)
+/*const httpsServer = https.createServer(credentials, app)
 httpsServer.listen(8443, function(){
     console.log("Server running on port 8443!")
-})
+})*/
 
 /**
  * Add date to console.log

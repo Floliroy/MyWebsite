@@ -5,12 +5,14 @@ const links = {
         versions: {
             name: "GitHub",
             link: "https://github.com/Impostor/Impostor/releases/tag/v1.1.0"
-        }
+        },
+        server: "/impostor"
     },
     mumbleWin: {
         name: "Mumble\n(winhttp.dll)",
         direct: "/winhttp",
-        versions: null
+        versions: null,
+        server: null
     },
     mumbleLog: {
         name: "Mumble\n(Logiciel)",
@@ -18,7 +20,8 @@ const links = {
         versions: {
             name: "Mumble",
             link: "https://www.mumble.info/downloads/"
-        }
+        },
+        server: "/mumble"
     },
     betterCrewLink: {
         name: "BetterCrewLink\n(Logiciel)",
@@ -26,12 +29,14 @@ const links = {
         versions: {
             name: "GitHub",
             link: "https://github.com/OhMyGuus/BetterCrewLink/releases"
-        }
+        },
+        server: "/bettercrewlink"
     },
     sheriff: {
         name: "Sheriff\n(Plugin)",
         direct: "/sheriff",
-        versions: null
+        versions: null,
+        server: null
     }
 }
 

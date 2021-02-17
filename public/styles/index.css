@@ -55,7 +55,7 @@ h3{
     transition: border-left 0.5s ease-in-out;
 }
 
-h3::after{
+h3.link::after{
     content: ' ';
     left: -0.2em;
     bottom: 0;
@@ -64,13 +64,13 @@ h3::after{
     position: absolute;
     transition: height 0.3s;
 }
-.blackTheme h3::after{
+.blackTheme h3.link::after{
     background: whitesmoke;
 }
-.whiteTheme h3::after{
+.whiteTheme h3.link::after{
     background: #2f3136;
 }
-h3:hover::after{
+h3.link:hover::after{
     height: 100%;
     transition: height 0.3s;
 }
@@ -88,7 +88,6 @@ table{
     width: 100%;
 }
 th, td{
-    vertical-align: top;
     padding: 1em;
     text-align: left;
 }
@@ -102,6 +101,15 @@ table.bordered{
 .bordered th, .bordered td{
     border: 1px solid slategrey;
     text-align: center;
+}
+
+.fullCenter th, .fullCenter td{
+    vertical-align: center;
+}
+
+.serverPwd{
+    width: 50px;
+    margin: 3px 0 3px 0;
 }
 
 p{

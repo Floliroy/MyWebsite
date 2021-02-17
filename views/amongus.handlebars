@@ -13,12 +13,12 @@
 
     <h3 id="links">Liens rapides</h3>
    
-    <table class="bordered">
+    <table class="bordered fullCenter">
         <thead>
             <tr>
                 {{#each links}}
                 <th>
-                    {{name}}
+                    {{{safePrint name}}}
                 </th>
                 {{/each}}
             </tr>
@@ -27,7 +27,7 @@
             <tr>
                 {{#each links}}
                 <td>
-                    Direct :<br>
+                    Direct :<br/>
                     <strong><a href="{{direct}}">Télécharger</a></strong>
                 </td>
                 {{/each}}
@@ -36,8 +36,20 @@
                 {{#each links}}
                 <td>
                     {{#if versions}}
-                        Versions :<br>
+                        Versions :<br/>
                         <strong><a href="{{versions.link}}" target="_blank">{{versions.name}}</a></strong>
+                    {{else}}
+                        <strong>/</strong>
+                    {{/if}}
+                </td>
+                {{/each}}
+            </tr>
+            <tr>
+                {{#each links}}
+                <td>
+                    {{#if server}}
+                        Mon serveur :<br/>
+                        MDP <input class="serverPwd" id="{{server}}" type="text" onkeyup="askForServer(event, this)"/>
                     {{else}}
                         <strong>/</strong>
                     {{/if}}
