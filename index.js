@@ -7,6 +7,7 @@ const fs = require('fs')
 const https = require('https')
 const express = require('express')
 const cookieParser = require('cookie-parser')
+const turbolinks = require('turbolinks-express')
 
 /**
  * My own libraries
@@ -123,6 +124,8 @@ app.use(function (req, res){
 	res.status(404)
     res.redirect("error")
 })
+app.use(turbolinks.redirect)
+app.use(turbolinks.location)
 const httpServer = express()
 httpServer.get("*", function(req, res) { 
     res.redirect("https://" + req.headers.host + req.url)

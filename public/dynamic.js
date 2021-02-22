@@ -31,6 +31,13 @@ $(document).on('click', 'a[href^="#"]', function(event) {
 window.setTimeout(offsetAnchor, 0)
 
 /**
+ * Set page transition
+ */
+window.addEventListener("beforeunload", function () {
+    document.getElementById("main").classList.add("animateOut");
+})
+
+/**
  * Function to ask for a server name
  */
 function askForServer(event, elem){
