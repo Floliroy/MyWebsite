@@ -1,4 +1,4 @@
-{{#ifEquals lang "fr"}}
+<%if(lang == "fr"){%>
     <h1>Guide Among Us</h1>
     <br/>
 
@@ -16,45 +16,45 @@
     <table class="bordered fullCenter">
         <thead>
             <tr>
-                {{#each links}}
+                <%for(const [_, link] of Object.entries(links)){%>
                 <th>
-                    {{{safePrint name}}}
+                    <%-link.name%>
                 </th>
-                {{/each}}
+                <%}%>
             </tr>
         </thead>
         <tbody>
             <tr>
-                {{#each links}}
+                <%for(const [_, link] of Object.entries(links)){%>
                 <td>
                     Direct :<br/>
-                    <strong><a href="{{direct}}">Télécharger</a></strong>
+                    <strong><a href="<%=link.direct%>">Télécharger</a></strong>
                 </td>
-                {{/each}}
+                <%}%>
             </tr>
             <tr>
-                {{#each links}}
+                <%for(const [_, link] of Object.entries(links)){%>
                 <td>
-                    {{#if versions}}
+                    <%if(link.versions){%>
                         Versions :<br/>
-                        <strong><a href="{{versions.link}}" target="_blank">{{versions.name}}</a></strong>
-                    {{else}}
+                        <strong><a href="<%=link.versions.link%>" target="_blank"><%=link.versions.name%></a></strong>
+                    <%}else{%>
                         <strong>/</strong>
-                    {{/if}}
+                        <%}%>
                 </td>
-                {{/each}}
+                <%}%>
             </tr>
             <tr>
-                {{#each links}}
+                <%for(const [_, link] of Object.entries(links)){%>
                 <td>
-                    {{#if server}}
+                    <%if(link.server){%>
                         Mon serveur :<br/>
-                        MDP <input class="serverPwd" id="{{server}}" type="text" onkeyup="askForServer(event, this)"/>
-                    {{else}}
+                        MDP <input class="serverPwd" id="<%=link.server%>" type="text" onkeyup="askForServer(event, this)"/>
+                    <%}else{%>
                         <strong>/</strong>
-                    {{/if}}
+                    <%}%>
                 </td>
-                {{/each}}
+                <%}%>
             </tr>
         </tbody>
     </table>
@@ -77,8 +77,8 @@
     <ol>
         <li>
             Dans un premier temps téléchargez la dernière version du Client Impostor<br/>
-            Liens : <strong><a href="{{links.impostor.direct}}">Téléchargement direct</a></strong> 
-            | <strong><a href="{{links.impostor.versions.link}}" target="_blank">Toutes les versions</a></strong>
+            Liens : <strong><a href="<%=links.impostor.direct%>">Téléchargement direct</a></strong> 
+            | <strong><a href="<%=links.impostor.versions.link%>" target="_blank">Toutes les versions</a></strong>
         </li>
         <li>
             Extrayez a l'endroit que vous souhaitez le contenu de l'archive Zip (à l'aide d'un outil tel que <a href="https://www.win-rar.com/start.html?&L=10" target="_blank">WinRar</a>)
@@ -104,7 +104,7 @@
     <h3 id="mumble">Chat de proximité (Mumble)</h3>
     <h2>Installation du winhttp.dll</h2>
     <ol>
-        <li>Téléchargez le fichier winhttp.dll en cliquant <strong><a href="{{links.mumbleWin.direct}}">Ici</a></strong></li>
+        <li>Téléchargez le fichier winhttp.dll en cliquant <strong><a href="<%=links.mumbleWin.direct%>">Ici</a></strong></li>
         <li>Ouvrez Steam, allez dans votre bibliotèque et cliquez sur Among Us</li>
         <li>    
             Cliquez sur l'engrenage à droite afin d'accéder aux propriétés<br/>
@@ -118,8 +118,8 @@
     <ol>
         <li>
             Dans un premier temps téléchargez le logiciel Mumble<br/>
-            Liens : <strong><a href="{{links.mumbleLog.direct}}">Téléchargement direct</a></strong> 
-            | <strong><a href="{{links.mumbleLog.versions.link}}" target="_blank">Toutes les versions</a></strong>
+            Liens : <strong><a href="<%=links.mumbleLog.direct%>">Téléchargement direct</a></strong> 
+            | <strong><a href="<%=links.mumbleLog.versions.link%>" target="_blank">Toutes les versions</a></strong>
         </li>
         <li>
             Après l'installation de Mumble il faut le configurer en cliquant sur l'engrenage bleu dans le menu<br/>
@@ -155,8 +155,8 @@
         </li>
     </ol>
     <br/>
-{{else}}
+<%}else{%>
     <h1>This page is not available in english for now.</h1>
     <br/>
     <h2>Please check it in french by changing the website language in the top right corner.</h2>
-{{/ifEquals}}
+<%}%>

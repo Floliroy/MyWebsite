@@ -24,29 +24,18 @@ module.exports = class Resume{
 
     static getPage(req, res){
         console.log(`${req.headers["x-forwarded-for"] || req.connection.remoteAddress} asked for resume`)
-        res.render("resume", {layout: "layout",
+
+        const birthday = new Date("1998-07-08")
+        const ageDate = new Date(new Date() - birthday)
+
+        res.render("partials/layout", {body: "resume",
             skills: skills,
             softwares: softwares,
             technologies: technologies,
-            helpers: {
-                printLevel: function(level){
-                    let levels = `<span class="right">`
-                    for(let i=0 ; i<level ; i++){
-                        levels += `<span class="dot red"></span>` 
-                    }
-                    for(let i=0 ; i<5-level ; i++){
-                        levels += `<span class="dot white"></span>` 
-                    }
-                    return levels + `</span>`
-                },
-                getAge: function(){
-                    const birthday = new Date("1998-07-08")
-                    const ageDate = new Date(new Date() - birthday)
-                    return ageDate.getFullYear() - 1970
-                }
-            },
+            age: ageDate.getFullYear() - 1970,
             theme: req.cookies["theme"] || "black",
-            lang: req.cookies["lang"] || "fr"
+            lang: req.cookies["lang"] || "fr",
+            version: require("../package.json").version
         })
     }
 

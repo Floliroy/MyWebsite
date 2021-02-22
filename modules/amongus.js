@@ -1,6 +1,6 @@
 const links = {
     impostor: {
-        name: "Impostor\n(Serveur Privé)",
+        name: "Impostor<br/>(Serveur Privé)",
         direct: "https://github.com/Impostor/Impostor/releases/download/v1.1.0/Impostor-Client-win-x64.zip",
         versions: {
             name: "GitHub",
@@ -9,13 +9,13 @@ const links = {
         server: "/impostor"
     },
     mumbleWin: {
-        name: "Mumble\n(winhttp.dll)",
+        name: "Mumble<br/>(winhttp.dll)",
         direct: "/winhttp",
         versions: null,
         server: null
     },
     mumbleLog: {
-        name: "Mumble\n(Logiciel)",
+        name: "Mumble<br/>(Logiciel)",
         direct: "https://www.mumble.info/downloads/windows-64",
         versions: {
             name: "Mumble",
@@ -24,7 +24,7 @@ const links = {
         server: "/mumble"
     },
     betterCrewLink: {
-        name: "BetterCrewLink\n(Logiciel)",
+        name: "BetterCrewLink<br/>(Logiciel)",
         direct: "https://github.com/OhMyGuus/BetterCrewLink/releases/download/v2.2.3/Better-CrewLink-Setup-2.2.3.exe",
         versions: {
             name: "GitHub",
@@ -33,7 +33,7 @@ const links = {
         server: "/bettercrewlink"
     },
     sheriff: {
-        name: "Sheriff\n(Plugin)",
+        name: "Sheriff<br/>(Plugin)",
         direct: "/sheriff",
         versions: null,
         server: null
@@ -44,10 +44,11 @@ module.exports = class AmongUs{
 
     static getPage(req, res){
         console.log(`${req.headers["x-forwarded-for"] || req.connection.remoteAddress} asked for amongus`)
-        res.render("amongus", {layout: "layout",
+        res.render("partials/layout", {body: "amongus",
             links: links,
             theme: req.cookies["theme"] || "black",
-            lang: req.cookies["lang"] || "fr"
+            lang: req.cookies["lang"] || "fr",
+            version: require("../package.json").version
         })
     }
 

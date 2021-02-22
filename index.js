@@ -8,8 +8,6 @@ const http = require('http')
 const https = require('https')
 const express = require('express')
 const cookieParser = require('cookie-parser')
-const Handlebars = require('handlebars')
-const handlebars = require('express-handlebars')
 
 /**
  * My own libraries
@@ -35,23 +33,7 @@ const credentials = {
 const app = express()
 app.use(cookieParser())
 app.use(express.urlencoded({extended: true}))
-app.set("view engine", "handlebars")
-app.engine("handlebars", handlebars({
-    layoutsDir: __dirname + "/views/layouts/",
-    partialsDir: __dirname + "/views/partials/",
-    version: require("./package.json").version,
-    helpers: {
-        version: require("./package.json").version,
-        ifEquals: function(val1, val2, options){
-            return val1 == val2 ? options.fn(this) : options.inverse(this)
-        },
-        safePrint: function(text) {
-            text = Handlebars.Utils.escapeExpression(text);
-            text = text.replace(/(\r\n|\n|\r)/gm, '<br/>');
-            return new Handlebars.SafeString(text);
-        }
-    }
-}))
+app.set("view engine", "ejs")
 
 /**
  * Pages
@@ -61,9 +43,10 @@ function getPage(page, req, res){
         console.log(`${req.headers["x-forwarded-for"] || req.connection.remoteAddress} asked for ${page}`)
     }
 
-    res.render(page, {layout: "layout",
+    res.render("partials/layout", {body: page,
         theme: req.cookies["theme"] || "black",
-        lang: req.cookies["lang"] || "fr"
+        lang: req.cookies["lang"] || "fr",
+        version: require("./package.json").version
     })
 }
 

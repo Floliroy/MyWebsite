@@ -3,13 +3,13 @@
     <tr>
         <th width="80%">
             <h1>Florian TERRIER</h1>
-            {{#ifEquals lang "fr"}}
-                <p>{{{getAge}}} ans, né à Toulouse (France)</p>
-            {{else}}
-                <p>{{{getAge}}} years old, born at Toulouse (France)</p>
-            {{/ifEquals}}
+            <%if(lang == "fr"){%>
+                <p><%=age%> ans, né à Toulouse (France)</p>
+            <%}else{%>
+                <p><%=age%> years old, born at Toulouse (France)</p>
+            <%}%>
             <p><a href="tel:+33619422408">&#x260E; 06 19 42 24 08</a></p>
-            <p><a href="mailto:florian.leeroy@hotmai.com">&#x2709; florian.leeroy@hotmail.com</a></p>
+            <p><a href="mailto:florian.leeroy@hotmail.com">&#x2709; florian.leeroy@hotmail.com</a></p>
         </th>
         <th id="imgProfil">
             <img src="./images/profil.png" alt="Profil" />
@@ -20,7 +20,7 @@
     <tr>
         <td width="62%">
             <div id="diplomas">
-                {{#ifEquals lang "fr"}}
+                <%if(lang == "fr"){%>
                 <h3>DIPLOMES</h3>
                 <ul>
                     <li>
@@ -42,7 +42,7 @@
                         </p>
                     </li>
                 </ul>
-                {{else}}
+                <%}else{%>
                 <h3>DIPLOMAS</h3>
                 <ul>
                     <li>
@@ -64,10 +64,10 @@
                         </p>
                     </li>
                 </ul>
-                {{/ifEquals}}
+                <%}%>
             </div><br/>
             <div id="experiences">
-                {{#ifEquals lang "fr"}}
+                <%if(lang == "fr"){%>
                 <h3>EXPERIENCES PROFESSIONNELLES</h3>
                 <ul>
                     <li>
@@ -89,7 +89,7 @@
                         </p>
                     </li>
                 </ul>
-                {{else}}
+                <%}else{%>
                 <h3>PROFESSIONAL EXPERIENCES</h3>
                 <ul>
                     <li>
@@ -111,52 +111,73 @@
                         </p>
                     </li>
                 </ul>
-                {{/ifEquals}}
+                <%}%>
             </div><br/>
             <div id="projects">
-                {{#ifEquals lang "fr"}}
+                <%if(lang == "fr"){%>
                 <h3>PROJETS</h3>
                 TODO
-                {{else}}
+                <%}else{%>
                 <h3>PROJECTS</h3>
                 TODO
-                {{/ifEquals}}
+                <%}%>
             </div><br/>
         </td>
         <td>
             <div id="skills">
-                <h3>{{#ifEquals lang "fr"}}COMPETENCES{{else}}SKILLS{{/ifEquals}}</h3>
-                {{#each skills}}
+                <h3><%if(lang == "fr"){%>COMPETENCES<%}else{%>SKILLS<%}%></h3>
+                <%for(const skill of skills){%>
                     <p>
-                        {{#ifEquals ../lang "fr"}}
-                            {{fr}}
-                        {{else}}
-                            {{en}}
-                        {{/ifEquals}}
-                        {{{printLevel level}}}
+                        <%if(lang == "fr"){%>
+                            <%=skill.fr%>
+                        <%}else{%>
+                            <%=skill.en%>
+                        <%}%>
+                        <span class="right">
+                            <%for(let i=0 ; i<skill.level ; i++){%>
+                                <span class="dot red"></span>
+                            <%}%>
+                            <%for(let i=0 ; i<5-skill.level ; i++){%>
+                                <span class="dot white"></span>
+                            <%}%>
+                        </span>
                     </p>
-                {{/each}}
+                <%}%>
             </div><br/>
             <div id="softwares">
-                <h3>{{#ifEquals lang "fr"}}LOGICIELS{{else}}SOFTWARES{{/ifEquals}}</h3>
-                {{#each softwares}}
+                <h3><%if(lang == "fr"){%>LOGICIELS<%}else{%>SOFTWARES<%}%></h3>
+                <%for(const software of softwares){%>
                     <p>
-                        {{name}}
-                        {{{printLevel level}}}
+                        <%=software.name%>
+                        <span class="right">
+                            <%for(let i=0 ; i<software.level ; i++){%>
+                                <span class="dot red"></span>
+                            <%}%>
+                            <%for(let i=0 ; i<5-software.level ; i++){%>
+                                <span class="dot white"></span>
+                            <%}%>
+                        </span>
                     </p>
-                {{/each}}
+                    <%}%>
             </div><br/>
             <div id="technologies">
             <h3>TECHNOLOGIES</h3>
-                {{#each technologies}}
+                <%for(const technologie of technologies){%>
                     <p>
-                        {{name}}
-                        {{{printLevel level}}}
+                        <%=technologie.name%>
+                        <span class="right">
+                            <%for(let i=0 ; i<technologie.level ; i++){%>
+                                <span class="dot red"></span>
+                            <%}%>
+                            <%for(let i=0 ; i<5-technologie.level ; i++){%>
+                                <span class="dot white"></span>
+                            <%}%>
+                        </span>
                     </p>
-                {{/each}}
+                <%}%>
             </div><br/>
             <div id="hobbies">
-                {{#ifEquals lang "fr"}}
+                <%if(lang == "fr"){%>
                 <h3>CENTRES D'INTERET</h3>
                 <p>
                     Jeux Vidéos
@@ -170,7 +191,7 @@
                 <p>
                     Culture du web
                 </p>       
-                {{else}}
+                <%}else{%>
                 <h3>HOBBIES</h3>
                 <p>
                     Video Games
@@ -184,7 +205,7 @@
                 <p>
                     Web culture
                 </p>      
-                {{/ifEquals}}
+                <%}%>
             </div><br/>
         </td>
     </tr>

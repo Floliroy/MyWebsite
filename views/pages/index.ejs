@@ -1,30 +1,30 @@
 <h1>
-    {{#ifEquals lang "fr"}}Bienvenue sur mon propre Site Web{{else}}Welcome on my very own WebSite{{/ifEquals}}
+    <%if(lang == "fr"){%>Bienvenue sur mon propre Site Web<%}else{%>Welcome on my very own WebSite<%}%>
 </h1>
 <br/>
 <h2>
-    {{#ifEquals lang "fr"}}Voici la liste des pages disponibles{{else}}Here is the list of available pages{{/ifEquals}} :
+    <%if(lang == "fr"){%>Voici la liste des pages disponibles<%}else{%>Here is the list of available pages<%}%> :
 </h2>
 <br/>
 
 <div>
     <h3 class="link"><a href="/resume">Portfolio</a></h3>
 
-    {{#ifEquals lang "fr"}}
+    <%if(lang == "fr"){%>
         Mon propre Portfolio / Curriculum Vitae <i>(en cours de dev ...)</i>
-    {{else}}
+    <%}else{%>
         My own Portfolio / Curriculum Vitae <i>(in development ...)</i>
-    {{/ifEquals}}
+    <%}%>
 </div>
 <br/>
 
 <div>
     <h3 class="link"><a href="/amongus">Among Us</a></h3>
 
-    {{#ifEquals lang "fr"}}
+    <%if(lang == "fr"){%>
         Plusieurs guides sur Among Us. Ainsi que des liens rapides de téléchargement.<br/>
-    {{else}}
+    <%}else{%>
         Different guides related to Among Us <i>(only available in french for now)</i>
-    {{/ifEquals}}
+    <%}%>
 </div>
 <br/>

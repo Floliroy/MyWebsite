@@ -1,0 +1,30 @@
+<link rel="stylesheet" type="text/css" href="./styles/header.css" />
+<header>
+    <span class="left">
+        &nbsp;&nbsp;&nbsp;
+        <strong>
+            <a href="/">HOME</a>
+        </strong>
+    </span>
+    <span class="right">
+        <img id="theme" alt="Theme" onclick="switchTheme()" src="./images/<%=theme == "black" ? "sun" : "moon"%>.png" />
+        
+        &nbsp;&nbsp;&nbsp;
+
+        <img src="./images/french.png" alt="FR" 
+        <%if(lang == "fr"){%>
+            class="selected"
+        <%}else{%>
+            onclick="window.location.href='/switchLang?lang=fr'"
+        <%}%> />
+
+        <img src="./images/english.png" alt="EN" 
+        <%if(lang == "en"){%>
+            class="selected"
+        <%}else{%>
+            onclick="window.location.href='/switchLang?lang=en'"
+        <%}%> />
+            
+        &nbsp;&nbsp;&nbsp;
+    </span>
+</header>

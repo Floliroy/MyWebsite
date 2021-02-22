@@ -2,14 +2,14 @@
 <footer>
     <span class="left">
         &nbsp;&nbsp;&nbsp;
-        v{{version}}
+        v<%=version%>
     </span>
 
-    {{#ifEquals lang "fr"}}
+    <%if(lang == "fr"){%>
         Développé par Floliroy, tous droits réservés.
-    {{else}}
+    <%}else{%>
         Developed by Floliroy, all rights reserved.
-    {{/ifEquals}}
+    <%}%>
 
     <span class="right">
         <img src="./images/github.png" alt="FR" onclick="window.open('https://github.com/Floliroy', '_blank')" />
