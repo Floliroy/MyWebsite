@@ -4,7 +4,6 @@ require('dotenv').config()
  */
 const moment = require('moment')
 const fs = require('fs')
-const http = require('http')
 const https = require('https')
 const express = require('express')
 const cookieParser = require('cookie-parser')
@@ -28,7 +27,7 @@ const credentials = {
 }
 
 /**
- * Setup the handlebars lib
+ * Setup the express lib
  */
 const app = express()
 app.use(cookieParser())
