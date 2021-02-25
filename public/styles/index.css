@@ -13,24 +13,14 @@ body.whiteTheme{
     color: #36393f;
 }
 
-@-webkit-keyframes fadeIn {
-    from { 
+@keyframes fadeInUp {
+    0% { 
         opacity: 0;
-        filter: blur(0);
+        transform: translate3d(0, 100%, 0);
     }
-    to { 
-        filter: blur(5px);
-    }
-}
-
-@keyframes fadeIn {
-    from { 
-        opacity: 0; 
-        filter: blur(0);
-    }
-    to { 
-        opacity: 1; 
-        filter: blur(5px);
+    100% { 
+        opacity: 1;
+        transform: none;
     }
 }
 
@@ -53,21 +43,24 @@ div#main{
     background-color: whitesmoke;
 }
 
-.animateIn {
-    -webkit-animation: fadeIn .25s ease-in;
-    animation: fadeIn .25s ease-in;
+/** Animation */
+
+.animate{
+    animation-duration: 0.25s;
+    transition-timing-function: ease-in;
+    animation-fill-mode: both;
 }
 
-.animateOut {
-    -webkit-transition: opacity .25s;
-    transition: opacity .25s;
-    opacity: 0;
+.animate .fadeInUp{
+    animation-name: fadeInUp;
 }
 
-#main img{
-    max-width: 100%;
+.animate .is-exiting {
+    animation-direction: alternate-reverse;
 }
 
+
+/** Titles */
 h1{
     color:crimson;
     text-align: center;
@@ -113,6 +106,7 @@ a{
     color: inherit;
 }
 
+/** Tables */
 table{
     margin-left: auto;
     margin-right: auto;
@@ -135,6 +129,7 @@ table.bordered{
     text-align: center;
 }
 
+/** Other */
 .fullCenter th, .fullCenter td{
     vertical-align: center;
 }
@@ -142,6 +137,10 @@ table.bordered{
 .serverPwd{
     width: 50px;
     margin: 3px 0 3px 0;
+}
+
+#main img{
+    max-width: 100%;
 }
 
 p{

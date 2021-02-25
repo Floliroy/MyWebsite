@@ -33,9 +33,31 @@ window.setTimeout(offsetAnchor, 0)
 /**
  * Set page transition
  */
-window.addEventListener("beforeunload", function () {
-    document.getElementById("main").classList.add("animateOut");
+$(function(){
+    "use strict"
+    var smoothState = $("#smoothState"),
+    options = {
+        prefetch: true,
+        cacheLength: 3,
+        scroll: true,
+        blacklist: "img",
+        onStart: {
+            duration: 250,
+            render: function ($container) {
+                $container.addClass("is-exiting")
+            }
+        },
+        onReady: {
+            duration: 0,
+            render: function ($container, $newContent) {
+                $container.removeClass("is-exiting")
+                $container.html($newContent)
+            }
+        }
+    },
+    smoothState = smoothState.smoothState(options).data("smoothState")
 })
+
 
 /**
  * Function to ask for a server name
