@@ -35,26 +35,25 @@ window.setTimeout(offsetAnchor, 0)
  */
 $(function(){
     "use strict"
-    var smoothState = $("#smoothState"),
+    var smoothState = $("#smoothState")
     options = {
         prefetch: true,
         cacheLength: 3,
         scroll: true,
-        blacklist: "img",
         onStart: {
             duration: 250,
             render: function ($container) {
                 $container.addClass("is-exiting")
             }
         },
-        onReady: {
+        /*onReady: {
             duration: 0,
             render: function ($container, $newContent) {
                 $container.removeClass("is-exiting")
                 $container.html($newContent)
             }
-        }
-    },
+        }*/
+    }
     smoothState = smoothState.smoothState(options).data("smoothState")
 })
 
