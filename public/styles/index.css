@@ -46,12 +46,13 @@ body.whiteTheme{
     z-index: 1;
     visibility: hidden;
     opacity: 0;
+    background: url("../images/transition.png");
 }
 .blackTheme .loader{
-    background-color: #36393f;
-}
-.whiteTheme .loader{
-    background-color: lightgrey;
+    background: linear-gradient(
+        rgba(0, 0, 0, 0.5), 
+        rgba(0, 0, 0, 0.5)
+    ), url("../images/transition.png");
 }
 
 /** Main */
