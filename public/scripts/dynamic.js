@@ -10,7 +10,7 @@ function switchTheme(){
             document.body.classList.remove(actualTheme)
             document.body.classList.add(actualTheme == "blackTheme" ? "whiteTheme" : "blackTheme")
 
-            document.getElementById("theme").src = actualTheme == "blackTheme" ? "./images/moon.png" : "./images/sun.png"
+            document.getElementById("theme").src = actualTheme == "blackTheme" ? "./images/header/moon.png" : "./images/header/sun.png"
         }
     })
 }

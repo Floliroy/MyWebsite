@@ -7,18 +7,18 @@
         </strong>
     </span>
     <span class="right">
-        <img id="theme" alt="Theme" onclick="switchTheme()" src="./images/<%=theme == "black" ? "sun" : "moon"%>.png" />
+        <img id="theme" alt="Theme" onclick="switchTheme()" src="./images/header/<%=theme == "black" ? "sun" : "moon"%>.png" />
         
         &nbsp;&nbsp;&nbsp;
 
-        <img src="./images/french.png" alt="FR" 
+        <img src="./images/header/french.png" alt="FR" 
         <%if(lang == "fr"){%>
             class="selected"
         <%}else{%>
             onclick="window.location.href='/switchLang?lang=fr'"
         <%}%> />
 
-        <img src="./images/english.png" alt="EN" 
+        <img src="./images/header/english.png" alt="EN" 
         <%if(lang == "en"){%>
             class="selected"
         <%}else{%>
