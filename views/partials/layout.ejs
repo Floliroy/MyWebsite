@@ -14,15 +14,14 @@
     <script type="text/javascript" src="./scripts/barba.js" defer></script>
 </head>
 
-
 <body class="<%=theme%>Theme" data-barba="wrapper">
     <div class="loader"></div>
     <div class="background"></div>
-    
+
     <%-include("header")%>
     <br/>
 
-    <div id="main" data-barba="container">
+    <div id="main" data-barba="container" data-barba-namespace="<%=body%>">
         <%-include(`../pages/${body}`)%>
     </div>
     
