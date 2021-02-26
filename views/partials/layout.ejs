@@ -7,21 +7,26 @@
     <link rel="icon" type="image/png" href="./logo.png" />
     <link rel="stylesheet" type="text/css" href="./styles/index.css" />
 
-    <script src="./scripts/jquery.min.js"></script>
-    <script src="./scripts/jquery.smoothState.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://unpkg.com/@barba/core"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/gsap.min.js"></script>
     <script type="text/javascript" src="./scripts/dynamic.js"></script>
+    <script type="text/javascript" src="./scripts/barba.js" defer></script>
 </head>
-<body class="<%=theme%>Theme">
-    <div id="smoothState" class="animate">
-        <%-include("header")%>
-        <br/>
 
-        <div id="main" class="animate fadeInUp">
-            <%-include(`../pages/${body}`)%>
-        </div>
-        
-        <br/>
-        <%-include("footer")%>
+
+<body class="<%=theme%>Theme" data-barba="wrapper">
+    <div class="loader"></div>
+    <div class="background"></div>
+    
+    <%-include("header")%>
+    <br/>
+
+    <div id="main" data-barba="container">
+        <%-include(`../pages/${body}`)%>
     </div>
+    
+    <br/>
+    <%-include("footer")%>
 </body>
 </html>

@@ -31,30 +31,15 @@ $(document).on('click', 'a[href^="#"]', function(event) {
 window.setTimeout(offsetAnchor, 0)
 
 /**
- * Set page transition
+ * Move background
  */
-$(function(){
-    "use strict"
-    var smoothState = $("#smoothState")
-    options = {
-        prefetch: true,
-        cacheLength: 3,
-        scroll: true,
-        onStart: {
-            duration: 250,
-            render: function ($container) {
-                $container.addClass("is-exiting")
-            }
-        },
-        /*onReady: {
-            duration: 0,
-            render: function ($container, $newContent) {
-                $container.removeClass("is-exiting")
-                $container.html($newContent)
-            }
-        }*/
-    }
-    smoothState = smoothState.smoothState(options).data("smoothState")
+const movementStrength = 100
+$(document).mousemove(function(event){
+    const width = movementStrength / $(window).width()
+    const height = movementStrength / $(window).height()
+    const newvalueX = width * (event.clientX - ($(window).width() / 2)) * - 1 - 25
+    const newvalueY = height * (event.clientY - ($(window).height() / 2)) * - 1 - 50
+    $(".background").css("background-position", `calc(50% - ${newvalueX}px) calc(50% - ${newvalueY}px)`)
 })
 
 

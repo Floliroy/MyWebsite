@@ -3,6 +3,11 @@ html{
     text-align: center;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     padding: 4em 0 4em 0;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+html::-webkit-scrollbar {
+    display: none;
 }
 body.blackTheme{
     background-color: #36393f;
@@ -13,15 +18,40 @@ body.whiteTheme{
     color: #36393f;
 }
 
-@keyframes fadeInUp {
-    0% { 
-        opacity: 0;
-        transform: translate3d(0, 100%, 0);
-    }
-    100% { 
-        opacity: 1;
-        transform: none;
-    }
+.background{
+    background: url("../images/wallpaper.png") no-repeat 50% 50%;
+    background-size: cover;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    transform: scale(1.1);
+}
+.blackTheme .background{
+    background: linear-gradient(
+        rgba(0, 0, 0, 0.7), 
+        rgba(0, 0, 0, 0.7)
+    ), url("../images/wallpaper.png") no-repeat 50% 50%;
+}
+
+.loader {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 200vh;
+    pointer-events: none;
+    z-index: 1;
+    visibility: hidden;
+    opacity: 0;
+}
+.blackTheme .loader{
+    background-color: #36393f;
+}
+.whiteTheme .loader{
+    background-color: lightgrey;
 }
 
 /** Main */
@@ -42,23 +72,6 @@ div#main{
 .whiteTheme div#main{
     background-color: whitesmoke;
 }
-
-/** Animation */
-
-.animate{
-    animation-duration: 0.25s;
-    transition-timing-function: ease-in;
-    animation-fill-mode: both;
-}
-
-.animate .fadeInUp{
-    animation-name: fadeInUp;
-}
-
-.animate .is-exiting {
-    animation-direction: alternate-reverse;
-}
-
 
 /** Titles */
 h1{
