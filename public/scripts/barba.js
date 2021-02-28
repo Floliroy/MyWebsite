@@ -47,7 +47,7 @@ barba.init({
     transitions: [{
         name: "default",
         async leave() {            
-            $(".loader").css("background", `url("../images/transition${$("body").hasClass("blackTheme")?"Black":"White"}.png")`)
+            $(".loader").css("background-image", `url("../images/transition${$("body").hasClass("blackTheme")?"Black":"White"}.png")`)
             await loaderIn("default")
         },
         enter() {
@@ -59,7 +59,7 @@ barba.init({
             namespace: ["index"]
         },
         async leave() {
-            $(".loader").css("background", `url("../images/transition${$("body").hasClass("blackTheme")?"Black":"White"}Reverse.png")`)
+            $(".loader").css("background-image", `url("../images/transition${$("body").hasClass("blackTheme")?"Black":"White"}Reverse.png")`)
             await loaderIn("home")
         },
         enter() {
