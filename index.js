@@ -14,6 +14,7 @@ const turbolinks = require('turbolinks-express')
  */
 const AmongUs = require('./modules/amongus')
 const Resume = require('./modules/resume')
+const PrintTftPlayers = require('./modules/printTftPlayers')
 
 /**
  * Certificate https
@@ -53,6 +54,9 @@ function getPage(page, req, res){
 app.get("/", function(req, res){
     getPage("index", req, res)
 })
+app.get("/printTftPlayers", function(req, res){
+    getPage("printTftPlayers", req, res)
+})
 app.get("/resume", function(req, res){
     Resume.getPage(req, res)
 })
@@ -87,6 +91,9 @@ app.post("/bettercrewlink", function(req, res){
     if(checkPassword(req, res)){
         res.send(`Serveur : ${process.env.BCL_SERVER}`)
     }
+})
+app.post("/printTftPlayers", function(req, res){
+    PrintTftPlayers.getList(req, res)
 })
 
 /**

@@ -48,7 +48,7 @@ $(document).mousemove(function(event){
  */
 function askForServer(event, elem){
     if(event.keyCode != 13) return
-    console.log("OUI")    
+
     $.ajax({
         method: "POST",
         url: elem.id,
@@ -56,7 +56,6 @@ function askForServer(event, elem){
             password: elem.value
         },
         success: function(retour, _) {
-            console.log(retour)
             alert(retour)
         }
     })    
