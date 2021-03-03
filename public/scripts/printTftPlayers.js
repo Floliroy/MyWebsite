@@ -14,8 +14,11 @@ $("input[type=button]").click(function(){
         method: "POST",
         url: "printTftPlayers",
         data: $("form").serialize(),
-        success: function(retour, _) {
-            $("#main").html(retour)
+        success: function(response) {
+            $("#main").html(response)
+        },
+        error : function(xhr, ajaxOptions, thrownError){
+            $("#main").html(xhr.responseText)
         }
     })
     $("#main").html("Chargement")
