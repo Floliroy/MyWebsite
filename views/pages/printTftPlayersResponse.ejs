@@ -1,10 +1,9 @@
-<h3>Elo Moyen</h3>
-<div>
-    <%=eloMoy%>
-</div>
+<span class="right"><button id="#retour" onclick="retour()">Retour</button></span>
+<h1>Elo Moyen</h1>
+<h3><%=eloMoy%></h3>
 
-<h3>Joueurs</h3>
-<table>
+<h1>Joueurs</h1>
+<table class="bordered" width="500px">
     <thead>
         <tr>
             <th>
@@ -35,34 +34,36 @@
     </tbody>
 </table>
 
-<h3>Joueurs non Trouvés</h3>
-<table>
-    <thead>
-        <tr>
-            <th>
-                Pseudo
-            </th>
-            <th>
-                Elo
-            </th>
-            <th>
-                Games
-            </th>
-        </tr>
-    </thead>
-    <tbody>
-        <%for(const player of playersNotFound){%>
+<%if(playersNotFound.length > 0){%>
+    <h1>Joueurs non Trouvés</h1>
+    <table class="bordered" width="500px">
+        <thead>
             <tr>
-                <td>
-                    <%=player.name%>
-                </td>
-                <td>
-                    /
-                </td>
-                <td>
-                    /
-                </td>
+                <th>
+                    Pseudo
+                </th>
+                <th>
+                    Elo
+                </th>
+                <th>
+                    Games
+                </th>
             </tr>
-        <%}%>
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            <%for(const player of playersNotFound){%>
+                <tr>
+                    <td>
+                        <%=player.name%>
+                    </td>
+                    <td>
+                        /
+                    </td>
+                    <td>
+                        /
+                    </td>
+                </tr>
+            <%}%>
+        </tbody>
+    </table>
+<%}%>

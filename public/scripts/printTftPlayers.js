@@ -9,17 +9,33 @@ function removeOtherFormTextArea(){
     $("input[type=text]").not(`#separator`).val("")
 }
 
+
+$("#loading").hide()
+$("#response").hide()
 $("input[type=button]").click(function(){
     $.ajax({
         method: "POST",
         url: "printTftPlayers",
         data: $("form").serialize(),
         success: function(response) {
-            $("#main").html(response)
+            $("#loading").hide()
+            $("#response").html(response)
+            $("#response").show()
         },
         error : function(xhr, ajaxOptions, thrownError){
-            $("#main").html(xhr.responseText)
+            $("#loading").hide()
+            $("#response").html(`<span class="right"><button id="#retour" onclick="retour()">Retour</button></span><h1>${xhr.responseText}</h1>`)
+            $("#response").show()
         }
     })
-    $("#main").html("Chargement")
+    $("form").hide()
+    $("#loading").show()
 })
+
+function retour(){
+    $("input[type=text]").val("")
+    $("#namesList").val("")
+    $("form").show()
+    $("#loading").hide()
+    $("#response").hide()
+}

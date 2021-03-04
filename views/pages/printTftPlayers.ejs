@@ -1,15 +1,15 @@
-<script type="text/javascript" src="./scripts/printTftPlayers.js" defer></script>
-
 <form>
     <fieldset>
         <legend>Cooldown TFT Cup</legend>
+        Merci de renseigner l'ID <strong>OU</strong> le lien de la Cooldown TFT Cup.
+        <br/><br/>
         <table>
             <tr>
                 <td>
                     <label for="cooldownId">ID du Tournoi :</label>
                 </td>
                 <td>
-                    <input type="text" name="cooldownId" id="cooldownId" onkeydown="removeOtherForm(this)">
+                    <input type="text" name="cooldownId" id="cooldownId" autocomplete="off" onkeydown="removeOtherForm(this)">
 
                 </td>
             </tr>
@@ -18,7 +18,7 @@
                     <label for="cooldownLink">Lien du Tournoi :</label>
                 </td>
                 <td>
-                    <input type="text" name="cooldownLink" id="cooldownLink" onkeydown="removeOtherForm(this)">
+                    <input type="text" name="cooldownLink" id="cooldownLink" autocomplete="off" onkeydown="removeOtherForm(this)">
                 </td>
             </tr>
             <tr class="fullCenter">
@@ -30,13 +30,15 @@
     </fieldset>
     <fieldset>
         <legend>PCS Trophy TFT</legend>
+        Merci de renseigner l'ID <strong>OU</strong> le lien du PCS Trophy TFT.
+        <br/><br/>
         <table>
             <tr>
                 <td>
                     <label for="pcsId">ID du Tournoi :</label>
                 </td>
                 <td>
-                    <input type="text" name="pcsId" id="pcsId" onkeydown="removeOtherForm(this)">
+                    <input type="text" name="pcsId" id="pcsId" autocomplete="off" onkeydown="removeOtherForm(this)">
                 </td>
             </tr>
             <tr>
@@ -44,7 +46,7 @@
                     <label for="pcsLink">Lien du Tournoi :</label>
                 </td>
                 <td>
-                    <input type="text" name="pcsLink" id="pcsLink" onkeydown="removeOtherForm(this)">
+                    <input type="text" name="pcsLink" id="pcsLink" autocomplete="off" onkeydown="removeOtherForm(this)">
                 </td>
             </tr>
             <tr class="fullCenter">
@@ -56,11 +58,13 @@
     </fieldset>
     <fieldset>
         <legend>Liste de Joueurs</legend>
+        Merci de renseigner une liste de joueurs séparés par un caractères de votre choix (<strong>ex: ";"</strong>).
+        <br/><br/>
         <table>
             <tr>
                 <td colspan="2">
                     <label for="namesList">Noms des Joueurs :</label><br/>
-                    <textarea name="namesList" id="namesList" onkeydown="removeOtherFormTextArea()"></textarea>
+                    <textarea name="namesList" id="namesList" autocomplete="off" onkeydown="removeOtherFormTextArea()"></textarea>
                 </td>
             </tr>
             <tr>
@@ -68,7 +72,7 @@
                     <label for="separator">Séparateur :</label>
                 </td>
                 <td>
-                    <input type="text" name="separator" id="separator" onkeydown="removeOtherForm(this)">
+                    <input type="text" name="separator" id="separator" autocomplete="off" onkeydown="removeOtherForm(this)">
                 </td>
             </tr>
             <tr class="fullCenter">
@@ -79,3 +83,10 @@
         </table>
     </fieldset>
 </form>
+
+<div id="loading" class="fullCenter">
+    <h1>Chargement ...</h1>
+    <img src="./images/loading.gif" width="300px">
+</div>
+
+<div id="response"></div>

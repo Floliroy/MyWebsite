@@ -93,7 +93,7 @@ app.post("/bettercrewlink", function(req, res){
     }
 })
 app.post("/printTftPlayers", function(req, res){
-    PrintTftPlayers.getList(req, res)
+    PrintTftPlayers.getList(req, res).catch(function(err){})
 })
 
 /**

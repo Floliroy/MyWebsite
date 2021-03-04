@@ -125,7 +125,6 @@ table{
     margin-left: auto;
     margin-right: auto;
     border-collapse: collapse;
-    width: 100%;
 }
 th, td{
     padding: 1em;
@@ -133,6 +132,7 @@ th, td{
 }
 
 table.bordered{
+    margin: 0;
     border: 1px solid slategrey;
     font-weight: normal;
     font-size: small;
@@ -140,14 +140,14 @@ table.bordered{
 
 .bordered th, .bordered td{
     border: 1px solid slategrey;
-    text-align: center;
 }
 
 /** Other */
-.fullCenter th, .fullCenter td{
+.fullCenter, .fullCenter th, .fullCenter td {
     vertical-align: center;
     text-align: center;
 }
+
 
 .serverPwd{
     width: 50px;
@@ -198,7 +198,7 @@ fieldset input[type=text]{
     width: 100%;
 }
 
-fieldset input[type=button]{
+fieldset input[type=button], button{
     margin: 5px;
     background-color: inherit;
     border-color: crimson;
@@ -208,13 +208,18 @@ fieldset input[type=button]{
     font-size: bold;
     transition-duration: 0.4s;
 }
-fieldset input[type=button]:hover {
+fieldset input[type=button]:hover, button:hover{
     background-color: crimson;
+}
+button{
+    position: absolute;
+    right: 9.3%;
+    top: 7em;
 }
 
 fieldset table{
     margin: 0;
-    width: 400px;
+    width: 500px;
 }
 fieldset th, fieldset td{
     padding: 0;
