@@ -79,25 +79,35 @@ function getRankByElo(elo){
 
 /** Get TFT info about a summoner */
 async function getTftSummonerByName(name) {
-    let redo
-    do{
-        redo = false
-        try{
-            const response = await tft.League.entriesByName(encodeURI(name))
-            const summoner = response[0]
-            
-            const div = isMasterPlus(summoner.tier) ? "" : rankShortcuts.get(summoner.rank).name
-            const rank = `${tierShortcuts.get(summoner.tier).name}${div} ${summoner.leaguePoints}LP`
-            const games = summoner.wins + summoner.losses
-            return {name: name, games: games, rank: rank}
-        }catch(err){
-            if(!err.response || err.response.status != 429){
-                return null
-            }else{
-                redo = true
-            }
-        }  
-    }while(redo)
+    try{
+        const response = await tft.League.entriesByName(encodeURI(name))
+        const summoner = response[0]
+        
+        const div = isMasterPlus(summoner.tier) ? "" : rankShortcuts.get(summoner.rank).name
+        const rank = `${tierShortcuts.get(summoner.tier).name}${div} ${summoner.leaguePoints}LP`
+        const games = summoner.wins + summoner.losses
+        return {name: name, games: games, rank: rank}
+    }catch(err){
+        if(!err.response || err.response.status != 429){
+            return null
+        }else{
+            return getTftSummonerByName(name)
+        }
+    } 
+}
+
+/** Check if acount exit */
+async function getTftUnrankedSummonerByName(name) {
+    try{
+        const response = await tft.Summoner.summonerByName(encodeURI(name))
+        return {name: response.name, games: "/", rank: "Unranked"}
+    }catch(err){
+        if(!err.response || err.response.status != 429){
+            return null
+        }else{
+            return getTftUnrankedSummonerByName(name)
+        }
+    }  
 }
 
 module.exports = class PrintTftPlayers{
@@ -134,14 +144,22 @@ module.exports = class PrintTftPlayers{
         }
 
         let players = new Array()
+        let playersUnranked = new Array()
         let playersNotFound = new Array()
         for await(const name of summonersList){
-            const player = await getTftSummonerByName(name)
-            console.log(player)
+            let player = await getTftSummonerByName(name)
             if(player != null){
+                console.log(player)
                 players.push(player)
             }else{
-                playersNotFound.push({name: name})
+                player = await getTftUnrankedSummonerByName(name)
+                if(player != null){
+                    console.log(player)
+                    playersUnranked.push(player)
+                }else{
+                    console.log(`${name} : Not Found`)
+                    playersNotFound.push({name: name})
+                }
             }
         }
         players.orderByElo()
@@ -152,7 +170,7 @@ module.exports = class PrintTftPlayers{
         }
         const eloMoy = getRankByElo(Math.round(eloTotal / players.length))
         res.render("pages/printTftPlayersResponse", {
-            players: players,
+            players: players.concat(playersUnranked),
             playersNotFound: playersNotFound,
             eloMoy: eloMoy,
             theme: req.cookies["theme"] || "black",

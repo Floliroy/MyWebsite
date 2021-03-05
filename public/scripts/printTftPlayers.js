@@ -24,7 +24,7 @@ $("input[type=button]").click(function(){
         },
         error : function(xhr, ajaxOptions, thrownError){
             $("#loading").hide()
-            $("#response").html(`<span class="right"><button id="#retour" onclick="retour()">Retour</button></span><h1>${xhr.responseText}</h1>`)
+            $("#response").html(`<span class="right"><button id="#retour" onclick="retour()">Retour</button></span><br/><h1>${xhr.responseText}</h1>`)
             $("#response").show()
         }
     })
