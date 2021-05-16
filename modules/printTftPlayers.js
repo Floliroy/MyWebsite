@@ -94,6 +94,7 @@ async function getTftSummonerByName(name) {
         return {name: name, games: games, rank: rank}
     }catch(err){
         if(!err.response || err.response.status != 429){
+            console.log(err)
             return null
         }else{
             return getTftSummonerByName(name)
@@ -108,6 +109,7 @@ async function getTftUnrankedSummonerByName(name) {
         return {name: response.name, games: "/", rank: "Unranked"}
     }catch(err){
         if(!err.response || err.response.status != 429){
+            console.log(err)
             return null
         }else{
             return getTftUnrankedSummonerByName(name)
