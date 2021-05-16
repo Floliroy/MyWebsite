@@ -81,7 +81,11 @@ function getRankByElo(elo){
 async function getTftSummonerByName(name) {
     try{
         const response = await tft.League.entriesByName(encodeURI(name))
-        const summoner = response[0]
+        for(const entry of response){
+            if(entry.queueType == "RANKED_TFT"){
+                return new Array(entry)
+            }
+        }
         
         const div = isMasterPlus(summoner.tier) ? "" : rankShortcuts.get(summoner.rank).name
         const rank = `${tierShortcuts.get(summoner.tier).name}${div} ${summoner.leaguePoints}LP`
