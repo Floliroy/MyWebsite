@@ -5,7 +5,6 @@ require('dotenv').config()
 const moment = require('moment')
 const fs = require('fs')
 const https = require('https')
-const http = require('http')
 const express = require('express')
 const cookieParser = require('cookie-parser')
 const turbolinks = require('turbolinks-express')
@@ -134,10 +133,10 @@ app.use(function (req, res){
 })
 app.use(turbolinks.redirect)
 app.use(turbolinks.location)
-const httpServer = http.createServer(app)
-/*httpServer.get("*", function(req, res) { 
+const httpServer = express()
+httpServer.get("*", function(req, res) { 
     res.redirect("https://" + req.headers.host + req.url)
-})*/
+})
 app.listen(8080)
 const httpsServer = https.createServer(credentials, app)
 httpsServer.listen(8443, function(){
