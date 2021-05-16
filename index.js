@@ -137,7 +137,7 @@ const httpServer = express()
 httpServer.get("*", function(req, res) { 
     res.redirect("https://" + req.headers.host + req.url)
 })
-app.listen(8080)
+httpServer.listen(8080)
 const httpsServer = https.createServer(credentials, app)
 httpsServer.listen(8443, function(){
     console.log("Server running on port 8443!")
