@@ -81,9 +81,10 @@ function getRankByElo(elo){
 async function getTftSummonerByName(name) {
     try{
         const response = await tft.League.entriesByName(encodeURI(name))
+        let summoner
         for(const entry of response){
             if(entry.queueType == "RANKED_TFT"){
-                return new Array(entry)
+                summoner = entry
             }
         }
         
