@@ -28,7 +28,6 @@ const credentials = {
 	cert: certificate,
 	ca: ca
 }
-}*/
 
 /**
  * Setup the express lib
