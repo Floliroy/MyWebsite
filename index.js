@@ -108,8 +108,8 @@ app.get("/sheriff", function(req, res){
 /**
  * For https
  */
-app.get("/.well-known/acme-challenge/CmPkEfRpop4jtg2Jn6vV8WyBnj27Yrbvy2IpMxek1ug", function(req, res){
-    res.download(__dirname + "/.well-known/acme-challenge/CmPkEfRpop4jtg2Jn6vV8WyBnj27Yrbvy2IpMxek1ug")
+app.get("/.well-known/acme-challenge/jB3yRrHPwGXtfJvIDjDt-9zOWWgFvygc9jtY2ZxZApE", function(req, res){
+    res.download(__dirname + "/.well-known/acme-challenge/jB3yRrHPwGXtfJvIDjDt-9zOWWgFvygc9jtY2ZxZApE")
 })
 /**
  * Gestion des cookies
@@ -133,15 +133,15 @@ app.use(function (req, res){
 })
 app.use(turbolinks.redirect)
 app.use(turbolinks.location)
-const httpServer = express()
+/*const httpServer = express()
 httpServer.get("*", function(req, res) { 
     res.redirect("https://" + req.headers.host + req.url)
-})
-httpServer.listen(8080)
-const httpsServer = https.createServer(credentials, app)
+})*/
+app.listen(8080)
+/*const httpsServer = https.createServer(credentials, app)
 httpsServer.listen(8443, function(){
     console.log("Server running on port 8443!")
-})
+})*/
 
 /**
  * Add date to console.log
