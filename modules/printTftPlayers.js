@@ -61,7 +61,7 @@ function getEloByRank(rank){
     if(isMasterPlus(tier)){
         return tierShortcuts.getPoints(tier) + lps
     }else{
-        const rank = args[0].replace(/\D/g,'')
+        rank = args[0].replace(/\D/g,'')
         return tierShortcuts.getPoints(tier) + rankShortcuts.getPoints(rank) + lps
     }
 }
