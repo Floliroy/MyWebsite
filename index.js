@@ -108,8 +108,8 @@ app.get("/sheriff", function(req, res){
 /**
  * For https
  */
-app.get("/.well-known/acme-challenge/t00YZa5Dzvgq20zsQd1xLOj6nT9iNzbyNexe6LmEEK8", function(req, res){
-    res.download(__dirname + "/.well-known/acme-challenge/t00YZa5Dzvgq20zsQd1xLOj6nT9iNzbyNexe6LmEEK8")
+app.get("/.well-known/acme-challenge/CmPkEfRpop4jtg2Jn6vV8WyBnj27Yrbvy2IpMxek1ug", function(req, res){
+    res.download(__dirname + "/.well-known/acme-challenge/CmPkEfRpop4jtg2Jn6vV8WyBnj27Yrbvy2IpMxek1ug")
 })
 /**
  * Gestion des cookies
