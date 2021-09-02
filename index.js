@@ -108,8 +108,8 @@ app.get("/sheriff", function(req, res){
 /**
  * For https
  */
-app.get("/.well-known/acme-challenge/BrL31CQGmmj6Aq1DmVEXKn_uMPHxYSx7X6Nv-as7TuA", function(req, res){
-    res.download(__dirname + "/.well-known/acme-challenge/BrL31CQGmmj6Aq1DmVEXKn_uMPHxYSx7X6Nv-as7TuA")
+app.get("/.well-known/acme-challenge/*", function(req, res){
+    res.download(__dirname + req.path)
 })
 /**
  * Gestion des cookies
