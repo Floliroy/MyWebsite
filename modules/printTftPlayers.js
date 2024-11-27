@@ -3,7 +3,6 @@ const tft = new Tft({ region: "EUW", apikey: process.env.RIOT_TOKEN})
 
 const axios = require('axios')
 const url = require('url');
-const battlefy = require('battlefy-api')
 
 Map.prototype.getPoints = function(name){
     for(let elem of this.values()){
@@ -120,14 +119,15 @@ module.exports = class PrintTftPlayers{
     static async getList(req, res){
         let summonersList = new Array()
         if(req.body.cooldownLink || req.body.cooldownId){
-            const id = req.body.cooldownId ? req.body.cooldownId : url.parse(req.body.cooldownLink).pathname.split("/")[3]
+            /*const id = req.body.cooldownId ? req.body.cooldownId : url.parse(req.body.cooldownLink).pathname.split("/")[3]
             if(!id) throw res.status(500).send(`Le lien Cooldown "${req.body.cooldownLink}" est incorrect`)
             const datas = await battlefy.getTournamentTeams(id).catch(function(err){
                 throw res.status(500).send(`Impossible de trouver la Cooldown Cup correspondante`)
             })
             for await(let data of datas){
                 summonersList.push(data.players[0].inGameName)
-            }
+            }*/
+            throw res.status(500).send(`Impossible de trouver la Cooldown Cup correspondante`)
         }else if(req.body.pcsLink || req.body.pcsId){
             const id = req.body.pcsId ? req.body.pcsId : url.parse(req.body.pcsLink).pathname.split("/")[3]
             if(!id) throw res.status(500).send(`Le lien PCS "${req.body.pcsLink}" est incorrect`)

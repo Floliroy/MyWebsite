@@ -13,7 +13,6 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^0.21.1",
-    "battlefy-api": "^1.1.0",
     "cookie-parser": "^1.4.5",
     "dotenv": "^8.2.0",
     "ejs": "^3.1.6",
