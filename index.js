@@ -3,9 +3,6 @@ require('dotenv').config()
  * All the libraries
  */
 const moment = require('moment')
-const fs = require('fs')
-const https = require('https')
-const http = require('http')
 const express = require('express')
 const cookieParser = require('cookie-parser')
 const turbolinks = require('turbolinks-express')
@@ -16,18 +13,6 @@ const turbolinks = require('turbolinks-express')
 const AmongUs = require('./modules/amongus')
 const Resume = require('./modules/resume')
 const PrintTftPlayers = require('./modules/printTftPlayers')
-
-/**
- * Certificate https
- */
-/*const privateKey = fs.readFileSync('/etc/letsencrypt/live/www.floliroy.fr/privkey.pem', 'utf8')
-const certificate = fs.readFileSync('/etc/letsencrypt/live/www.floliroy.fr/cert.pem', 'utf8')
-const ca = fs.readFileSync('/etc/letsencrypt/live/www.floliroy.fr/chain.pem', 'utf8')
-const credentials = {
-	key: privateKey,
-	cert: certificate,
-	ca: ca
-}*/
 
 /**
  * Setup the express lib
@@ -110,12 +95,6 @@ app.get("/sheriff", function(req, res){
     res.download(__dirname + "/public/ressources/AmongUs_SheriffMod.zip")
 })
 /**
- * For https
- */
-app.get("/.well-known/acme-challenge/*", function(req, res){
-    res.download(__dirname + req.path)
-})
-/**
  * Gestion des cookies
  */
 app.get("/switchTheme", function(req, res){
@@ -137,16 +116,9 @@ app.use(function (req, res){
 })
 app.use(turbolinks.redirect)
 app.use(turbolinks.location)
-const httpServer = http.createServer(app)
-/*httpServer.get("*", function(req, res) { 
-    res.redirect("https://" + req.headers.host + req.url)
-})*/
-httpServer.listen(8080)
-/*const httpsServer = https.createServer(credentials, app)
-httpsServer.listen(8443, function(){
-    console.log("Server running on port 8443!")
+app.listen(8080, function(){
+    console.log("Server running on port 8080!")
 })
-*/
 /**
  * Add date to console.log
  */
