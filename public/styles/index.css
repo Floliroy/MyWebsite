@@ -63,8 +63,8 @@ div#main{
     margin-inline: auto; 
     min-height: 100%;
 
-    width: 80%;
-    max-width: 1400px;
+    width: 66%;
+    max-width: 66%;
     min-width: 650px;
     text-align: left;
 }
