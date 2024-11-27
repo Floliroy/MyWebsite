@@ -77,7 +77,7 @@ barba.init({
     },{
         name: "home",
         to: {
-            namespace: ["index"]
+            namespace: ["portfolio"]
         },
         async leave() {
             $(".loader").css("background-image", `url("../images/transition${$("body").hasClass("blackTheme")?"Black":"White"}Reverse.png")`)

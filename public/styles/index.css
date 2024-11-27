@@ -10,11 +10,9 @@ html::-webkit-scrollbar {
     display: none;
 }
 body.blackTheme{
-    background-color: #36393f;
     color: lightgrey;
 }
 body.whiteTheme{
-    background-color: lightgrey;
     color: #36393f;
 }
 
@@ -57,21 +55,24 @@ body.whiteTheme{
 
 /** Main */
 div#main{
+    position: absolute;
+    top: 0;
+    padding: 100px 1em ;
+    left: 0; 
+    right: 0; 
+    margin-inline: auto; 
+    min-height: 100%;
+
     width: 80%;
     max-width: 1152px;
     min-width: 768px;
-    box-shadow: 0px -2px 5px 2px rgba(112, 128, 144, 0.5), 0px 2px 5px 2px rgba(112, 128, 144, 0.5);
-    margin-left: auto;
-    margin-right: auto;
-    border-collapse: collapse;
-    padding: 1em;
     text-align: left;
 }
 .blackTheme div#main{
-    background-color: #2f3136;
+    background-color: rgba(47, 49, 54, 0.85);
 }
 .whiteTheme div#main{
-    background-color: whitesmoke;
+    background-color: rgba(245, 245, 245, 0.85);
 }
 
 /** Titles */
@@ -89,19 +90,20 @@ h1{
 
 h3{
     border-left: 4px solid crimson;
-    padding: 0.3em 0.5em 0.3em 0.5em;
+    padding: 0.2em 0.5em 0.2em 0.5em;
     margin: 0.5em 0 0.5em 0;
     position: relative;
 }
 
 h3.link::after{
     content: ' ';
-    left: -0.2em;
+    left: -0.14em;
     bottom: 0;
     height: 0;
     width: 4px;
     position: absolute;
     transition: height 0.3s;
+    color: crimson;
 }
 .blackTheme h3.link::after{
     background: whitesmoke;
@@ -115,9 +117,18 @@ h3.link:hover::after{
 }
 
 a{
+    color: crimson !important;
+    text-decoration: none !important;
     cursor: pointer;
-    text-decoration: dotted;
-    color: inherit;
+}
+h3.link:hover{
+    transition: color 0.3s;
+}
+.blackTheme h3.link:hover {
+    color: lightgrey !important;
+}
+.whiteTheme h3.link:hover {
+    color:#36393f !important;
 }
 
 /** Tables */
@@ -175,8 +186,8 @@ span.left{
 fieldset{
     border-radius: 15px;
     box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.7);
-    padding: 10px;
-    margin:  10px 5px 10px 5px;
+    padding: 10px !important;
+    margin:  10px 5px 10px 5px !important;
 }
 .whiteTheme fieldset{
     background-color: rgb(178, 178, 178);

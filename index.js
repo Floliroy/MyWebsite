@@ -5,6 +5,7 @@ require('dotenv').config()
 const moment = require('moment')
 const fs = require('fs')
 const https = require('https')
+const http = require('http')
 const express = require('express')
 const cookieParser = require('cookie-parser')
 const turbolinks = require('turbolinks-express')
@@ -19,14 +20,14 @@ const PrintTftPlayers = require('./modules/printTftPlayers')
 /**
  * Certificate https
  */
-const privateKey = fs.readFileSync('/etc/letsencrypt/live/www.floliroy.fr/privkey.pem', 'utf8')
+/*const privateKey = fs.readFileSync('/etc/letsencrypt/live/www.floliroy.fr/privkey.pem', 'utf8')
 const certificate = fs.readFileSync('/etc/letsencrypt/live/www.floliroy.fr/cert.pem', 'utf8')
 const ca = fs.readFileSync('/etc/letsencrypt/live/www.floliroy.fr/chain.pem', 'utf8')
 const credentials = {
 	key: privateKey,
 	cert: certificate,
 	ca: ca
-}
+}*/
 
 /**
  * Setup the express lib
@@ -51,11 +52,14 @@ function getPage(page, req, res){
     })
 }
 
-app.get("/", function(req, res){
+app.get("/home", function(req, res){
     getPage("index", req, res)
 })
 app.get("/printTftPlayers", function(req, res){
     getPage("printTftPlayers", req, res)
+})
+app.get("/", function(req, res){
+    getPage("portfolio", req, res)
 })
 app.get("/resume", function(req, res){
     Resume.getPage(req, res)
@@ -133,16 +137,16 @@ app.use(function (req, res){
 })
 app.use(turbolinks.redirect)
 app.use(turbolinks.location)
-const httpServer = express()
-httpServer.get("*", function(req, res) { 
+const httpServer = http.createServer(app)
+/*httpServer.get("*", function(req, res) { 
     res.redirect("https://" + req.headers.host + req.url)
-})
+})*/
 httpServer.listen(8080)
-const httpsServer = https.createServer(credentials, app)
+/*const httpsServer = https.createServer(credentials, app)
 httpsServer.listen(8443, function(){
     console.log("Server running on port 8443!")
 })
-
+*/
 /**
  * Add date to console.log
  */

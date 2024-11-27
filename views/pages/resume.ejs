@@ -1,212 +1,221 @@
 <link rel="stylesheet" type="text/css" href="./styles/resume.css" />
-<table>
-    <tr>
-        <th width="80%">
-            <h1>Florian TERRIER</h1>
+<div class="row">
+    <div class="col-9 col-xl-10">
+        <h1>Florian TERRIER</h1>
+        <%if(lang == "fr"){%>
+            <%=age%> ans, né à Toulouse (France)
+        <%}else{%>
+            <%=age%> years old, born at Toulouse (France)
+        <%}%>
+        <br>
+        <a href="tel:+33619422408">&#x260E; 06 19 42 24 08</a>
+        <br>
+        <a href="mailto:florian.leeroy@hotmail.com">&#x2709; florian.leeroy@hotmail.com</a>
+    </div>
+    <div class="col" id="imgProfil">
+        <img src="./images/profil.png" alt="Profil" class="img-fluid"  />
+    </div>
+</div>
+<div class="row">
+    <div class="col-12 col-md-8">
+        <div id="experiences">
             <%if(lang == "fr"){%>
-                <p><%=age%> ans, né à Toulouse (France)</p>
+            <h3>EXPERIENCES PROFESSIONNELLES</h3>
+            <ul>
+                <li>
+                    
+                        Développeur Auto-Entrepreneur<br/>
+                        Juin 2021 à Aujourd'hui<br/>
+                        <i>
+                            Mes projets :
+                            <ul>
+                                <li>Automatisation de l'administration de tournoi TFT pour : Némacup, FreshCup, Masters France, Maestro Cup, KOF95, ...</li>
+                                <li>Site web de cartes à collectionner (type Panini) en ligne achetable avec des points de chaîne Twitch</li>
+                                <li>Overlay Twitch interactif et modifiable avec une interface administrateur ou bien par achat de points de chaîne par les spectateurs</li>
+                                <li>Analyse du ladder TFT pour des stats de tournoi, des snapshots de tournoi, ou bien des stats de fin de saison</li>
+                            </ul>
+                        </i><br/>
+                    
+                </li>
+                <li>
+                    
+                        Vacataire puis Alternant Développeur Web, MESRI<br/>
+                        Février 2019 à Septembre 2022<br/>
+                        <i>J'ai pu travailler sur de nombreux projets en Java Spring, Oracle SQL, et les classiques du front-end (HTML, CSS, JavaScript).<br/>
+                        Mais aussi me former au métier de chef de projet en encadrant d'autres développeurs sur certains projets.</i><br/><br/>
+                </li>
+                <li>
+                    
+                        Stage de 2ème année GEII, LAAS-CNRS<br/>
+                        Avril à Juin 2018<br/>
+                        <i>Ma mission était de créer un multiplexeur à fibre optique dans le cadre d'un projet plus global de nanosatellite visant à étudier le comportement de fibres optiques en milieu spatial.</i><br/>
+                </li>
+            </ul>
             <%}else{%>
-                <p><%=age%> years old, born at Toulouse (France)</p>
+            <h3>PROFESSIONAL EXPERIENCES</h3>
+            <ul>
+                <li>
+                    
+                        Freelance Developer<br/>
+                        June 2021 to Today<br/>
+                        <i> 
+                            My projects: 
+                            <ul> 
+                                <li>Automation of TFT tournament administration for: Némacup, FreshCup, Masters France, Maestro Cup, KOF95, ...</li>
+                                <li>Online collectible card website (Panini-style) purchasable with Twitch channel points</li>
+                                <li>Interactive and customizable Twitch overlay with an admin interface or through channel points purchases by viewers</li>
+                                <li>Analysis of the TFT ladder for tournament stats, tournament snapshots, or end-of-season stats</li> 
+                            </ul> 
+                        </i><br/>
+                    
+                </li>
+                <li>
+                    
+                        Temporary worker then Work-study Web Developer, MESRI<br/>
+                        February 2019 to September 2022<br/>
+                        <i>I have worked on numerous projects using Java Spring, Oracle SQL, and front-end essentials (HTML, CSS, JavaScript).<br/>
+                        I have also trained in project management by supervising other developers on certain projects.</i><br/><br/>
+                    
+                </li>
+                <li>
+                    
+                        2nd year GEII Internship, LAAS-CNRS<br/>
+                        April to June 2018<br/>
+                        <i>My mission was to create a fiber optic multiplexer as part of a larger nanosatellite project aimed at studying the behavior of optical fibers in a space environment.</i><br/>
+                    
+                </li>
+            </ul>
             <%}%>
-            <p><a href="tel:+33619422408">&#x260E; 06 19 42 24 08</a></p>
-            <p><a href="mailto:florian.leeroy@hotmail.com">&#x2709; florian.leeroy@hotmail.com</a></p>
-        </th>
-        <th id="imgProfil">
-            <img src="./images/profil.png" alt="Profil" />
-        </th>
-    </tr>
-</table>
-<table>
-    <tr>
-        <td width="62%">
-            <div id="diplomas">
-                <%if(lang == "fr"){%>
-                <h3>DIPLOMES</h3>
-                <ul>
-                    <li>
-                        <p>
-                            L3 STRI, UPSSITECH - Université Paul Sabatier<br/>
-                            Aout 2020 - Toulouse (31)
-                        </p>
-                    </li>
-                    <li>
-                        <p>
-                            DUT GEII, Université Paul Sabatier<br/>
-                            Janvier 2019 - Toulouse (31)
-                        </p>
-                    </li>
-                    <li>
-                        <p>
-                            Bac S SI, Spé Math - Lycée Pierre Paul Riquet<br/>
-                            Juillet 2016 - Saint-Orens (31)
-                        </p>
-                    </li>
-                </ul>
-                <%}else{%>
-                <h3>DIPLOMAS</h3>
-                <ul>
-                    <li>
-                        <p>
-                            L3 STRI, UPSSITECH - University Paul Sabatier<br/>
-                            August 2020 - Toulouse (31)
-                        </p>
-                    </li>
-                    <li>
-                        <p>
-                            DUT GEII, University Paul Sabatier<br/>
-                            January 2019 - Toulouse (31)
-                        </p>
-                    </li>
-                    <li>
-                        <p>
-                            Bac S SI, Spec Math - High School Pierre Paul Riquet<br/>
-                            July 2016 - Saint-Orens (31)
-                        </p>
-                    </li>
-                </ul>
-                <%}%>
-            </div><br/>
-            <div id="experiences">
-                <%if(lang == "fr"){%>
-                <h3>EXPERIENCES PROFESSIONNELLES</h3>
-                <ul>
-                    <li>
-                        <p>
-                            Vacataire puis Alternant Développeur Web, MESRI<br/>
-                            Février 2019 à Aujourd'hui
-                        </p>
-                    </li>
-                    <li>
-                        <p>
-                            Vacataire Chaîne d'Inscription, Université Paul Sabatier<br/>
-                            Été 2017 et Été 2018
-                        </p>
-                    </li>
-                    <li>
-                        <p>
-                            Stage de 2ème année GEII, LAAS-CNRS<br/>
-                            Avril à Juin 2018
-                        </p>
-                    </li>
-                </ul>
-                <%}else{%>
-                <h3>PROFESSIONAL EXPERIENCES</h3>
-                <ul>
-                    <li>
-                        <p>
-                            Temporary worker then Work-study Web Developer, MESRI<br/>
-                            February 2019 to Today
-                        </p>
-                    </li>
-                    <li>
-                        <p>
-                            Temporary worker Registration Chain, University Paul Sabatier<br/>
-                            Summer 2017 and Summer 2018
-                        </p>
-                    </li>
-                    <li>
-                        <p>
-                            2nd year GEII Internship, LAAS-CNRS<br/>
-                            April to June 2018
-                        </p>
-                    </li>
-                </ul>
-                <%}%>
-            </div><br/>
-            <div id="projects">
-                <%if(lang == "fr"){%>
-                <h3>PROJETS</h3>
-                TODO
-                <%}else{%>
-                <h3>PROJECTS</h3>
-                TODO
-                <%}%>
-            </div><br/>
-        </td>
-        <td>
-            <div id="skills">
-                <h3><%if(lang == "fr"){%>COMPETENCES<%}else{%>SKILLS<%}%></h3>
-                <%for(const skill of skills){%>
-                    <p>
-                        <%if(lang == "fr"){%>
-                            <%=skill.fr%>
-                        <%}else{%>
-                            <%=skill.en%>
-                        <%}%>
-                        <span class="right">
-                            <%for(let i=0 ; i<skill.level ; i++){%>
-                                <span class="dot red"></span>
-                            <%}%>
-                            <%for(let i=0 ; i<5-skill.level ; i++){%>
-                                <span class="dot white"></span>
-                            <%}%>
-                        </span>
-                    </p>
-                <%}%>
-            </div><br/>
-            <div id="softwares">
-                <h3><%if(lang == "fr"){%>LOGICIELS<%}else{%>SOFTWARES<%}%></h3>
-                <%for(const software of softwares){%>
-                    <p>
-                        <%=software.name%>
-                        <span class="right">
-                            <%for(let i=0 ; i<software.level ; i++){%>
-                                <span class="dot red"></span>
-                            <%}%>
-                            <%for(let i=0 ; i<5-software.level ; i++){%>
-                                <span class="dot white"></span>
-                            <%}%>
-                        </span>
-                    </p>
+        </div><br/>
+        <div id="diplomas">
+            <%if(lang == "fr"){%>
+            <h3>DIPLOMES</h3>
+            <ul>
+                <li>
+                    
+                        Master STRI, UPSSITECH - Université Paul Sabatier<br/>
+                        Septembre 2022 - Toulouse (31)
+                    
+                </li>
+                <li>
+                    
+                        Licence STRI, UPSSITECH - Université Paul Sabatier<br/>
+                        Aout 2020 - Toulouse (31)
+                    
+                </li>
+                <li>
+                    
+                        DUT GEII, Université Paul Sabatier<br/>
+                        Février 2019 - Toulouse (31)
+                    
+                </li>
+            </ul>
+            <%}else{%>
+            <h3>DIPLOMAS</h3>
+            <ul>
+                <li>
+                    
+                        M2 STRI, UPSSITECH - University Paul Sabatier<br/>
+                        September 2022 - Toulouse (31)
+                    
+                </li>
+                <li>
+                    
+                        L3 STRI, UPSSITECH - University Paul Sabatier<br/>
+                        August 2020 - Toulouse (31)
+                    
+                </li>
+                <li>
+                    
+                        DUT GEII, University Paul Sabatier<br/>
+                        February 2019 - Toulouse (31)
+                    
+                </li>
+            </ul>
+            <%}%>
+        </div><br/>
+    </div>
+    <div class="col-12 col-md-4">
+        <div id="skills">
+            <h3><%if(lang == "fr"){%>COMPETENCES<%}else{%>SKILLS<%}%></h3>
+            <%for(const skill of skills){%>
+                
+                    <%if(lang == "fr"){%>
+                        <%=skill.fr%>
+                    <%}else{%>
+                        <%=skill.en%>
                     <%}%>
-            </div><br/>
-            <div id="technologies">
-            <h3>TECHNOLOGIES</h3>
-                <%for(const technologie of technologies){%>
-                    <p>
-                        <%=technologie.name%>
-                        <span class="right">
-                            <%for(let i=0 ; i<technologie.level ; i++){%>
-                                <span class="dot red"></span>
-                            <%}%>
-                            <%for(let i=0 ; i<5-technologie.level ; i++){%>
-                                <span class="dot white"></span>
-                            <%}%>
-                        </span>
-                    </p>
+                    <span class="right">
+                        <%for(let i=0 ; i<skill.level ; i++){%>
+                            <span class="dot red"></span>
+                        <%}%>
+                        <%for(let i=0 ; i<5-skill.level ; i++){%>
+                            <span class="dot white"></span>
+                        <%}%>
+                    </span>
+                    <br>
+                
+            <%}%>
+        </div><br/>
+        <div id="softwares">
+            <h3><%if(lang == "fr"){%>LOGICIELS<%}else{%>SOFTWARES<%}%></h3>
+            <%for(const software of softwares){%>
+                
+                    <%=software.name%>
+                    <span class="right">
+                        <%for(let i=0 ; i<software.level ; i++){%>
+                            <span class="dot red"></span>
+                        <%}%>
+                        <%for(let i=0 ; i<5-software.level ; i++){%>
+                            <span class="dot white"></span>
+                        <%}%>
+                    </span>
+                    
+                    <br>
                 <%}%>
-            </div><br/>
-            <div id="hobbies">
-                <%if(lang == "fr"){%>
+        </div><br/>
+        <div id="technologies">
+        <h3><%if(lang == "fr"){%>LANGUES<%}else{%>LANGUAGES<%}%></h3>
+            <%if(lang == "fr"){%>
+                Anglais - C1
+                <br>
+                Francais
+            <%}else{%>
+                English - C1
+                <br>
+                French
+            <%}%>
+        </div><br/>
+        <div id="hobbies">
+            <%if(lang == "fr"){%>
                 <h3>CENTRES D'INTERET</h3>
-                <p>
-                    Jeux Vidéos
-                </p>
-                <p>
-                    Séries TV
-                </p>
-                <p>
-                    Taekwondo
-                </p>         
-                <p>
-                    Culture du web
-                </p>       
-                <%}else{%>
+                Jeux Vidéos
+                <br>
+                Escape Games
+                <br>
+                Taekwondo
+                <br>
+                Culture du web
+                <br>
+            <%}else{%>
                 <h3>HOBBIES</h3>
-                <p>
-                    Video Games
-                </p>
-                <p>
-                    TV Series
-                </p>
-                <p>
-                    Taekwondo
-                </p>         
-                <p>
-                    Web culture
-                </p>      
-                <%}%>
-            </div><br/>
-        </td>
-    </tr>
-</table>
+                Video Games
+                <br>
+                Escape Games
+                <br>
+                Taekwondo
+                <br>
+                Web culture
+                <br>
+            <%}%>
+        </div><br/>
+    </div>
+    <div id="download">
+        &nbsp;&nbsp;
+        <%if(lang == "fr"){%>
+            <a href="/CV_Floliroy.pdf" download>⇓ Télécharger en PDF</a>
+        <%}else{%>
+            <a href="/CV_Floliroy.pdf" download>⇓ Download PDF</a>
+        <%}%>
+    </div>
+</div>

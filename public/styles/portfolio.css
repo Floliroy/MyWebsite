@@ -1,0 +1,9 @@
+div#main img{
+    border-radius: 10px;
+    width: 75%;
+    box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.7);
+    margin: 5px 0px;
+}
+div#main{
+    text-align: justify;
+}

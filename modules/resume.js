@@ -1,23 +1,17 @@
 const skills = new Array(
-    {fr: "Informatique (Logiciel)", en: "Cumputer Science", level: 5},
-    {fr: "Informatique (Données)", en: "Data Processing", level: 4},
-    {fr: "Électronique", en: "Electronic", level: 3},
-    {fr: "Réseaux et Télécoms", en: "Networks and Telecoms", level: 2},
-    {fr: "Anglais", en: "English", level: 4}
+    {fr: "Développement back-end", en: "Back-end Dev", level: 4},
+    {fr: "Développement full-stack", en: "Full-stack Dev", level: 3},
+    {fr: "Gestion de projets", en: "Project Management", level: 3},
+    {fr: "NodeJS", en: "NodeJS", level: 4},
+    {fr: "Java Spring", en: "Java Spring", level: 3},
+    {fr: "SQL", en: "SQL", level: 3}
 )
 const softwares = new Array(
-    {name: "VisualStudio Code", level: 5},
-    {name: "Eclipse", level: 5},
-    {name: "Oracle", level: 4},
+    {name: "VS Code", level: 4},
+    {name: "Eclipse", level: 4},
+    {name: "Oracle", level: 3},
     {name: "Arduino", level: 2},
     {name: "Looping", level: 3},
-)
-const technologies = new Array(
-    {name: "Git", level: 4},
-    {name: "PL/SQL", level: 4},
-    {name: "Spring", level: 2},
-    {name: "NodeJS", level: 5},
-    {name: "WSL", level: 3},
 )
 
 module.exports = class Resume{
@@ -31,7 +25,6 @@ module.exports = class Resume{
         res.render("partials/layout", {body: "resume",
             skills: skills,
             softwares: softwares,
-            technologies: technologies,
             age: ageDate.getFullYear() - 1970,
             theme: req.cookies["theme"] || "black",
             lang: req.cookies["lang"] || "fr",

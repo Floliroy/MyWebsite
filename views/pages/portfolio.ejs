@@ -1,0 +1,40 @@
+<link rel="stylesheet" type="text/css" href="./styles/portfolio.css" />
+<h1>
+    PORTFOLIO
+</h1>
+<br>
+Auto-entrepreneur, je travaille à mon compte pour des entrepises et particuliers dans le domaine de l'esport et du streaming.
+<br><br>
+<h3>NémaCup</h3>
+La NémaCup #9 est un tournoi TFT faisant partie du circuit français officiel et s'étant déroulé pendant le set 11.<br>
+<a href="https://cup.nemaides.fr" target="_blank"><img src="./images/nemacup.png" alt="NémaCup" class="img-fluid"/></a><br>
+J'ai eu l'opportunité de travailler sur de nombreux tournois TFT (Ultimate Maestro, FreshCup, Masters France, Maestro Cup, KOF95, ...) et d'ailleurs sur tous les tournois faisant partie du Hex Tour (circuit français officiel) à ce jour.
+Cependant, celui-ci est probablement le plus abouti selon moi, en raison de l'ajout d'un site web, contrairement à la plupart des tournois TFT qui se contentent d'un Google Sheet.<br><br>
+
+Au niveau du back-end, de nombreuses requêtes API sont envoyées au serveur de Riot Games pour recueillir des données sur les comptes des joueurs ainsi que sur les parties en temps réel.
+Ces données sont ensuite stockées dans un Google Sheet (également via des requêtes API), qui sert de pseudo-base de données. Cela permet un accès simplifié pour d'éventuels administrateurs néophytes dans l'utilisation des bases de données.<br>
+Enfin, une interface administrateur, utilisée pour contrôler les différentes fonctions et les algorithmes de tri que j'ai développés, est accessible via un bot Discord. Cela facilite la gestion des droits d'accès au salon contenant l'interface, et donc la modification des données.
+L'ensemble est interconnecté afin d'assurer une fluidité optimale, tant pour les administrateurs que pour les joueurs.<br><br>
+
+<h3>Balanced by Daylight</h3>
+Balanced by Daylight est un site aidant les joueurs compétitifs de Dead by Daylight (DBD) dans la création de leur builds.<br>
+<a href="https://balancedbydaylight.com/balance-checker" target="_blank"><img src="./images/bbd.png" alt="Balanced by Daylight" class="img-fluid"/></a><br>
+Dead by Daylight (DBD) étant un jeu asymétrique et déséquilibré, il est nécessaire de bannir de nombreuses compétences et objets lors des tournois.
+Chaque tournoi ayant ses propres règles et restrictions, il est facile pour les joueurs de se perdre et de commettre des erreurs avant même que leur match commence.<br>
+Balanced by Daylight a pour objectif d'aider les joueurs en leur fournissant un site web qui les aide à créer leurs builds tout en respectant les restrictions d'un grand nombre de tournois en collaboration.<br>
+<br>
+Je ne suis pas à l'origine de ce projet, mais j'en suis le principal contributeur. J'ai principalement effectué de nombreuses modifications sur l'aspect visuel du site, l'ajout du drag & drop, l'import et export des données, le tout afin d'en améliorer l'expérience utilisateur.<br>
+Mais surtout, j'ai été à l'origine d'une fonctionnalité appelée l'autobalancer. Son objectif est de permettre à n'importe quel tournoi d'héberger un fichier JSON sur GitHub contenant ses règles, puis, de notre côté, de récupérer ces règles périodiquement et de les mettre à disposition des utilisateurs.<br>
+<a href="https://github.com/Floliroy/DBD-Balance-Checker" target="_blank">Lien Github du projet</a><br><br>
+
+
+<h3>NémaCards</h3>
+Les NémaCards sont un système de cartes à collectionner (type Panini) en ligne achetable avec des points de chaîne Twitch.<br>
+<a href="https://cards.nemaides.fr" target="_blank"><img src="./images/nemacards.png" alt="NémaCards" class="img-fluid"/></a><br>
+Afin de donner une utilisation aux points de chaîne sur Twitch les NémaCards ont été mise en place sur le stream de Nema.<br><br>
+En me connectant à l'API Twitch, je récupère les demandes des utilisateurs qui souhaitent obtenir des cartes sur le site.<br>
+Je stocke ensuite dans une base de données MySQL les jetons permettant d'ouvrir des cartes de niveau 1 à 5 pour les joueurs. Lorsqu'ils utilisent ces jetons, je stocke les cartes ouvertes dans leurs collections respectives.<br>
+Il y a donc une base de données solide et bien structurée, ainsi que des procédures SQL pour gérer les "transactions" de jetons et de cartes, en plus d'un système de sécurité utilisant les IDs et tokens Twitch pour différencier chaque utilisateur.<br><br>
+Un projet similaire avait été réalisé en collaboration avec Shaunz, intitulé "Les Z'Oeufs", sur lequel je m'occupais uniquement du back-end, tandis qu'un autre développeur se chargeait du front-end.<br>
+Ce projet avait connu de nombreux ajouts de fonctionnalités, ce qui a entraîné une base de données encore plus volumineuse et l'implémentation de plusieurs algorithmes supplémentaires.
+Il a cependant dû être arrêté et n'est désormais plus en ligne.

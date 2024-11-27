@@ -3,19 +3,21 @@ html{
 }
 
 #imgProfil{
-    float: right;
-    width: 10em;
+    min-width: 10em !important;
 }
 #imgProfil img{
-    width: 10em;
-    height: 10em;
+    float: right;
+    width: 10em !important;
+    height: 10em !important;
+    min-width: 10em !important;
+    min-height: 10em !important;
     border-radius: 50%;
 }
 
 span.dot{
     height: 12px;
     width: 12px;
-    border: 1px solid black;
+    box-shadow: 1px 1px 1px black, 1px -1px 1px black, 0 0 3px black;
     border-radius: 50%;
     display: inline-block;
     margin-bottom: -2px;
@@ -34,4 +36,11 @@ table{
 
 th, td{
     vertical-align: top;
+}
+
+div#experiences{
+    text-align: justify;
+}
+div#experiences i {
+    font-size: small;
 }
